@@ -1,6 +1,6 @@
 {
-  "homepage": "https://biewwl.github.io/biewwl.com/",
-  "name": "biewwl.com",
+  "homepage": "https://biewwl.github.io/portfolio",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
