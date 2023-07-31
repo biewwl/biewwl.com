@@ -1,0 +1,19 @@
+.card__skill {
+  background-color: var(--dark-01);
+  height: 260px;
+  min-width: 250px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  gap: 15px;
+  border: 1px solid var(--dark-03);
+  color: var(--medium-00);
+  line-height: 110%;
+  margin: 10px;
+}
+
+.card__skill__icon {
+  font-size: 1.5em;
+}

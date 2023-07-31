@@ -1,0 +1,12 @@
+@media screen and (max-width: 600px) {
+  .tool-block {
+    height: 80px;
+    width: 80px;
+    display: flex;
+    font-size: 0.8em;
+  }
+
+  .tool-block__name {
+    font-size: 0.8em;
+  }
+}

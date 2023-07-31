@@ -1,0 +1,23 @@
+.dev-tools-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.dev-tools-section__title {
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1em;
+  background: linear-gradient(169deg, var(--medium-02) 0%, transparent 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dev-tools-section__icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 120px));
+  gap: 10px;
+  width: 100%;
+  padding: 20px 0;
+}

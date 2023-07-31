@@ -1,0 +1,21 @@
+@media screen and (max-width: 600px) {
+  .footer {
+    display: flex;
+    padding: 50px 30px;
+    gap: 40px;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .footer__links__title,
+  .footer__contact__title {
+    font-size: 1.1em;
+    margin-block-end: 10px;
+  }
+  
+  .footer__links__link,
+  .footer__contact__item {
+    font-size: 0.8em;
+  }
+
+}

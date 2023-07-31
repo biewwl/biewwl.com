@@ -1,0 +1,19 @@
+@media screen and (max-width: 600px) {
+  .certificate-link {
+    height: 50px;
+    padding-right: 0;
+  }
+
+  .certificate-link__numb {
+    font-size: 4em;
+  }
+
+  .certificate-link__name {
+    font-size: 0.7em;
+    margin-left: 40px;
+  }
+
+  .certificate-link__arrow {
+    width: 20px;
+  }
+}

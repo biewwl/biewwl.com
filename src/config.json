@@ -1,0 +1,36 @@
+{
+  "routes": {
+    "home": "/",
+    "projects": "/projects",
+    "project": "/project/:projectName"
+  },
+  "pages": {
+    "home": {
+      "welcome_message": "Hi, I’m Gabriel 👋",
+      "slogan": "Building Web Sites, Databases and Designs",
+      "projects_link_text": "Discovery",
+      "section_skills_title": "Main skills in the area of ​​Web Development",
+      "section_certificates_title": "Training certificates in the development course at Trybe in 2022",
+      "section_project_title": "Discover projects and inspirations for UI UX designers",
+      "section_tools_title": "Tools, Languages ​​and Frameworks that I master."
+    },
+    "projects": {
+      "slogan":"Discover new templates and designs",
+      "placeholder_search_text": "Name, Framework, Library...",
+      "section_projects_title": "All projects developed"
+    },
+    "project": {
+      "figma_link_text": "Design",
+      "repository_link_text": "Repository"
+    }
+  },
+  "components": {
+    "header": {
+      "home_link_text": "Home",
+      "projects_link_text": "Projects"
+    }
+  },
+  "localStorage": {
+    "rate_key": "biewwl.com---rate--project:::"
+  }
+}

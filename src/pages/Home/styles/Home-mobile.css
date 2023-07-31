@@ -1,0 +1,47 @@
+@media screen and (max-width: 600px) {
+  .home__presentation {
+    gap: 20px;
+  }
+
+  .home__presentation__welcome-message {
+    color: var(--medium-01);
+    font-size: 0.8em;
+    font-weight: 400;
+  }
+
+  .home__presentation__slogan {
+    font-size: 1.5em;
+    width: 80%;
+  }
+
+  .home__presentation__discovery-btn {
+    scale: 0.7;
+  }
+
+  .home__icons {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 10px;
+  }
+
+  .home__section-title {
+    width: 80%;
+    font-size: 1.2em;
+  }
+
+  .home__cards {
+    gap: 0;
+  }
+
+  .home__certificates {
+    gap: 20px;
+  }
+
+  .home__tools {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+    width: 100%;
+    padding: 20px;
+    justify-items: center;
+  }
+}

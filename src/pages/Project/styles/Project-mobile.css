@@ -1,0 +1,35 @@
+@media screen and (max-width: 600px) {
+
+  .project__main {
+    padding: 0 20px;
+  }
+
+  .project__main__project {
+    font-size: 0.6em;
+  }
+
+  .project__main__title {
+    font-size: 2em;
+    width: 80%;
+  }
+
+  .project__main__tags-dev--tag {
+    font-size: 0.5em;
+  }
+
+  .project__main__links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+
+  .project__main__links__link {
+    justify-content: center;
+    font-size: 0.8em;
+    padding: 8px;
+  }
+
+  .project__main__description {
+    font-size: 0.9em;
+  }
+}

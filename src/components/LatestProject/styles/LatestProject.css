@@ -1,0 +1,99 @@
+.latest-project {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--dark-01);
+  width: 100%;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 0;
+}
+
+.latest-project__images {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 70%;
+  width: 100%;
+  transform: rotateX(40deg) translateX(-55px);
+}
+
+.latest-project__images__image-0,
+.latest-project__images__image-1,
+.latest-project__images__image-2 {
+  height: 50%;
+  position: absolute;
+  box-shadow: 0px 10px 40px 0px var(--dark-03--opc-00);
+}
+
+.latest-project__images__image-0 {
+  z-index: 3;
+  transform: translateY(-50px) skew(-30deg, 15deg);
+}
+
+.latest-project__images__image-1 {
+  z-index: 2;
+  transform: skew(-30deg, 15deg);
+}
+
+.latest-project__images__image-2 {
+  z-index: 1;
+  transform: translateY(50px) skew(-30deg, 15deg);
+}
+
+.latest-project__details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 360px;
+  align-items: flex-start;
+}
+
+.latest-project__details__name {
+  color: var(--medium-01);
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 1.8em;
+}
+
+.latest-project__details__name--tag {
+  font-size: 0.5em;
+  margin-inline-start: 5px;
+  text-transform: lowercase;
+}
+
+.latest-project__details__description,
+.latest-project__details__release {
+  color: var(--medium-00);
+  line-height: 120%;
+}
+
+.latest-project__details__tags {
+  color: var(--medium-01);
+  font-weight: 600;
+}
+
+.latest-project__details__rate {
+  font-size: 1.2em;
+  color: gold;
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.latest-project__details__link {
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(to bottom, var(--medium-00), var(--medium-00--opc-00)) 1;
+  padding: 8px 35px;
+  background: none;
+  text-decoration: none;
+}
+
+.latest-project__details__link__text {
+  background: linear-gradient(180deg, var(--medium-00) 0%, var(--medium-00--opc-00) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1em;
+}

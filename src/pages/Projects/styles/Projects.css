@@ -1,0 +1,103 @@
+.projects__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.projects__main__first-screen {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  min-height: calc(100vh - 120px);
+  justify-content: center;
+  padding-top: 80px;
+}
+
+.projects__main__icon {
+  font-size: 2.8em;
+  color: var(--dark-05);
+}
+
+.projects__main__slogan {
+  font-size: 3em;
+  font-weight: 400;
+  width: 500px;
+  text-align: center;
+  background: linear-gradient(180deg, var(--medium-01) 0%, #ffffff00 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.projects__main__input__label {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.projects__main__input__label__icon {
+  position: absolute;
+  font-size: 1.4em;
+  color: var(--dark-05);
+  left: 10px;
+}
+
+.projects__main__input__label__search {
+  background-color: var(--dark-03);
+  border: none;
+  height: 40px;
+  width: 280px;
+  outline: none;
+  padding: 0 10px 0 40px;
+  color: var(--medium-01);
+  font-size: 0.9em;
+}
+
+.projects__main__input__label__search::placeholder {
+  color: var(--dark-05);
+}
+
+.projects__main__image {
+  width: 90vw;
+  height: 30vw;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, transparent 0%, var(--dark-00) 100%),
+    url("../../../assets/4k-black.png"),
+    lightgray 0px 0px / 100% 199.698% no-repeat;
+  box-shadow: 0px -20px 30px -10px var(--dark-01);
+  background-size: cover;
+}
+
+.projects__main__image__line-detail {
+  width: 95vw;
+  height: 1px;
+  background: var(--dark-05);
+}
+
+.projects__main__section-title {
+  width: 502px;
+  text-align: center;
+  font-family: League Spartan;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background: linear-gradient(169deg, var(--medium-01) 0%, #ffffff00 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 40px 0;
+  width: 80%;
+}
+
+.projects__main__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  width: 100%;
+  padding: 20px;
+  justify-items: center;
+  gap: 40px 20px;
+}

@@ -1,0 +1,51 @@
+@media screen and (max-width: 600px) {
+  .latest-project {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .latest-project__images {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vw;
+    min-width: 100%;
+    transform: rotateX(40deg);
+  }
+
+  .latest-project__images__image-0,
+  .latest-project__images__image-1,
+  .latest-project__images__image-2 {
+    height: auto;
+    width: 60%;
+    position: absolute;
+    box-shadow: 0px 10px 40px 0px var(--dark-03--opc-00);
+  }
+
+  .latest-project__details__name {
+    font-size: 1.5em;
+  }
+
+  .latest-project__details__description,
+  .latest-project__details__release,
+  .latest-project__details__tags {
+    font-size: 0.8em;
+  }
+
+  .latest-project__details__link {
+    width: 100%;
+    text-align: center;
+    border: none;
+    background-color: var(--dark-03);
+  }
+
+  .latest-project__details__link__text {
+    color: var(--medium-00);
+    background: none;
+    background-clip: unset;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+  }
+}

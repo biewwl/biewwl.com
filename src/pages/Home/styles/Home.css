@@ -1,0 +1,112 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  gap: 80px;
+  align-items: center;
+}
+
+.home__presentation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.home__presentation__image {
+  width: 60px;
+  border-radius: 50%;
+}
+
+.home__presentation__welcome-message {
+  color: var(--medium-01);
+  font-size: 1.3em;
+  font-weight: 400;
+}
+
+.home__presentation__slogan {
+  font-size: 3em;
+  font-weight: 400;
+  width: 600px;
+  text-align: center;
+  background: linear-gradient(180deg, var(--medium-01) 0%, #ffffff00 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home__presentation__discovery-btn {
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(to bottom, var(--medium-00), var(--medium-00--opc-00)) 1;
+  padding: 10px 40px;
+  background: none;
+  text-decoration: none;
+}
+
+.home__presentation__discovery-btn__text {
+  background: linear-gradient(180deg, var(--medium-00) 0%, var(--medium-00--opc-00) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1em;
+}
+
+.home__icons {
+  padding: 60px 0;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  align-items: center;
+  justify-content: space-around;
+  justify-items: center;
+  width: 100%;
+  gap: 20px 10px;
+}
+
+.home__icons__icon {
+  font-size: 1.5em;
+  color: var(--medium-00);
+}
+
+.home__section-title {
+  width: 502px;
+  text-align: center;
+  font-family: League Spartan;
+  font-size: 2em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background: linear-gradient(169deg, var(--medium-01) 0%, #ffffff00 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home__cards {
+  padding: 20px 0;
+  margin: 0 20px;
+  display: flex;
+  /* gap: 20px; */
+  width: 100%;
+  max-width: 1200px;
+  justify-content: space-between;
+  overflow-y: auto;
+}
+
+.home__certificates {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  max-width: 750px;
+  padding: 0 20px;
+}
+
+.home__tools {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 40px;
+  width: 100%;
+  padding: 40px;
+  justify-items: center;
+}
