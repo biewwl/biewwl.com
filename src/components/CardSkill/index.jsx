@@ -6,8 +6,8 @@ function CardSkill({ icon, name, description }) {
   return (
     <div className="card__skill">
       <Icon icon={icon} className="card__skill__icon" />
-      <p>{name}</p>
-      <p>{description}</p>
+      <p className="card__skill__name">{name}</p>
+      <p className="card__skill__description">{description}</p>
     </div>
   );
 }

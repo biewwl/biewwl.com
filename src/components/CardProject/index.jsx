@@ -66,12 +66,19 @@ function CardProject({ projectData }) {
               />
             </svg>
           </Link>
-          <Link to={repository} className="card-project__details__links__link">
-            <Icon icon={tools.github.icon} />
-          </Link>
-          <Link to={figma} className="card-project__details__links__link">
-            <Icon icon={tools.figma.icon} />
-          </Link>
+          {(frontend || backend) && (
+            <Link
+              to={repository}
+              className="card-project__details__links__link"
+            >
+              <Icon icon={tools.github.icon} />
+            </Link>
+          )}
+          {design && (
+            <Link to={figma} className="card-project__details__links__link">
+              <Icon icon={tools.figma.icon} />
+            </Link>
+          )}
         </div>
       </div>
     </section>

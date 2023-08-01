@@ -11,7 +11,11 @@
   border: 1px solid var(--dark-03);
   color: var(--medium-00);
   line-height: 110%;
-  margin: 10px;
+  transition: 0.5s;
+}
+
+.card__skill:hover {
+  box-shadow: 0 0 10px var(--dark-03);
 }
 
 .card__skill__icon {

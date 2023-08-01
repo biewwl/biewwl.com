@@ -34,7 +34,6 @@ function Projects() {
             />
           </label>
           <div className="projects__main__image" />
-          <div className="projects__main__image__line-detail" />
         </section>
         <h3 className="projects__main__section-title">
           {section_projects_title}

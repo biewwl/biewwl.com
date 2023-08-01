@@ -86,11 +86,11 @@
   padding: 20px 0;
   margin: 0 20px;
   display: flex;
-  /* gap: 20px; */
-  width: 100%;
+  width: 95%;
   max-width: 1200px;
   justify-content: space-between;
   overflow-y: auto;
+  gap: 15px;
 }
 
 .home__certificates {

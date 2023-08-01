@@ -36,7 +36,7 @@
 
 .card-project__details__tags-dev--tag {
   align-items: center;
-  border-radius: 0.5em;
+  border-radius: 0.3em;
   color: var(--dark-00);
   display: flex;
   font-size: 0.6em;
