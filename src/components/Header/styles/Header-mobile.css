@@ -9,14 +9,6 @@
   }
 
   .header__logo__and__name__name {
-    display: none;
-  }
-
-  .header__nav {
-    display: flex;
-  }
-
-  .header__nav__link {
-    font-size: 0.9em;
+    font-size: 1em;
   }
 }

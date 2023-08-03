@@ -1,0 +1,19 @@
+.tool-line {
+  display: flex;
+  padding: 5px 10px;
+  border-radius: 0.3em;
+  gap: 5px;
+  align-items: center;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.tool-line:not(:hover) {
+  background-color: var(--dark-03) !important;
+  color: var(--medium-00);
+}
+
+.tool-line__name {
+  font-size: 0.8em;
+  margin-block-start: 2px;
+}

@@ -7,7 +7,7 @@ function ToolBlock({ name, icon, iconColor }) {
     <div className="tool-block">
       <Icon
         icon={icon}
-        className="home__icons__icon"
+        className="tool-block__icon"
         style={{ color: iconColor }}
       />
       <span className="tool-block__name">{name}</span>

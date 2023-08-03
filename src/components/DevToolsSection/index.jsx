@@ -1,4 +1,4 @@
-import ToolBlock from "../ToolBlock";
+import ToolLine from "../ToolLine";
 import "./styles/DevToolsSection.css";
 import "./styles/DevToolsSection-mobile.css";
 
@@ -8,7 +8,7 @@ function DevToolsSection({ title, icons }) {
       <h3 className="dev-tools-section__title">{title}</h3>
       <div className="dev-tools-section__icons">
         {icons.map(({ icon, name, iconColor }, i) => (
-          <ToolBlock icon={icon} name={name} iconColor={iconColor} key={i} />
+          <ToolLine icon={icon} name={name} iconColor={iconColor} key={i} />
         ))}
       </div>
     </section>

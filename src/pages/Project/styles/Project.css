@@ -89,9 +89,11 @@
 
 .project__main__links__link__icon {
   color: var(--dark-05);
+  padding: 2px;
+  font-size: 1.3em;
 }
 
 .project__main__links__link__text {
   color: var(--medium-00);
-  margin-block-start: 3px;
+  margin-block-start: 1px;
 }

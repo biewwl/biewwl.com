@@ -1,0 +1,53 @@
+.aside-menu__checkbox__openMenu {
+  display: none;
+}
+
+.aside-menu__checkbox__openMenu:not(:checked) ~ .aside-menu__content {
+  width: 0;
+}
+
+.aside-menu__icon, .aside-menu__content__nav__icon {
+  font-size: 1.5em;
+  color: var(--dark-05);
+  cursor: pointer;
+}
+
+.aside-menu__content {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  z-index: 100;
+  transition: 0.5s;
+}
+
+.aside-menu__content__close-menu {
+  height: 100%;
+  width: 100%;
+}
+
+.aside-menu__content__nav {
+  padding: 45px 60px;
+  background-color: var(--dark-01);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 30px;
+  min-width: 200px;
+}
+
+.aside-menu__content__nav__icon {
+  margin-bottom: 20px;
+}
+
+.aside-menu__content__nav__link {
+  color: var(--medium-00);
+  text-decoration: none;
+  font-size: 1em;
+}
