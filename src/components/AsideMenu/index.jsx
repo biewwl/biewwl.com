@@ -4,12 +4,17 @@ import { Icon } from "@iconify/react";
 import { useState } from "react";
 import "./styles/AsideMenu.css";
 import "./styles/AsideMenu-mobile.css";
+import lS from "manager-local-storage";
 
 function AsideMenu() {
-  const { home, projects } = config.routes;
-  const { home_link_text, projects_link_text } = config.components.header;
+  const { home, projects, saved } = config.routes;
+  const { home_link_text, projects_link_text, saved_link_text } =
+    config.components.aside;
+  const { rate_keys_list } = config.localStorage;
 
   const [openMenu, setOpenMenu] = useState(false);
+  const ratedCards = lS.get(rate_keys_list) ?? [];
+  const ratedCardsCount = ratedCards.length;
 
   const handleOpenMenu = () => {
     setOpenMenu(!openMenu);
@@ -36,12 +41,19 @@ function AsideMenu() {
           onClick={handleOpenMenu}
         ></div>
         <nav className="aside-menu__content__nav">
-          <Icon icon="heroicons-outline:x" onClick={handleOpenMenu} className="aside-menu__content__nav__icon" />
+          <Icon
+            icon="heroicons-outline:x"
+            onClick={handleOpenMenu}
+            className="aside-menu__content__nav__icon"
+          />
           <Link to={home} className="aside-menu__content__nav__link">
             {home_link_text}
           </Link>
           <Link to={projects} className="aside-menu__content__nav__link">
             {projects_link_text}
+          </Link>
+          <Link to={saved} className="aside-menu__content__nav__link">
+            {saved_link_text} ({ratedCardsCount})
           </Link>
         </nav>
       </div>

@@ -14,6 +14,9 @@ const projects = allProjects.sort((projectA, projectB) => {
 export const getProjectData = (projectName) =>
   projects.find((project) => project.name === projectName);
 
+export const getProjectsData = (projectsList) =>
+  projects.filter((project) => projectsList.includes(project.name));
+
 export const lastProject = projects[0];
 
 export default projects;

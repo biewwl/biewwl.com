@@ -21,8 +21,6 @@ function CardProject({ projectData }) {
 
   const [projectCover] = images;
 
-  console.log(figma);
-
   return (
     <section className="card-project">
       <img src={projectCover} alt="" className="card-project__image" />
@@ -71,13 +69,18 @@ function CardProject({ projectData }) {
           {(frontend || backend) && (
             <Link
               to={repository}
+              target="_blank"
               className="card-project__details__links__link"
             >
               <Icon icon={tools.github.icon} />
             </Link>
           )}
           {design && (
-            <Link to={figma} className="card-project__details__links__link">
+            <Link
+              to={figma}
+              className="card-project__details__links__link"
+              target="_blank"
+            >
               <Icon icon={tools.figma.icon} />
             </Link>
           )}

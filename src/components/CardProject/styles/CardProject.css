@@ -2,6 +2,7 @@
   background-color: var(--dark-01);
   width: 280px;
   box-shadow: 0 0 5px var(--dark-03);
+  position: relative;
 }
 
 .card-project__image {
@@ -69,7 +70,7 @@
 }
 
 .card-project__details__links__link-to-project {
-  width: 100%;
+  flex-grow: 1;
   background-color: var(--dark-03);
   display: flex;
   align-items: center;
@@ -82,7 +83,7 @@
 }
 
 .card-project__details__links__link {
-  min-width: 35px;
+  width: 35px;
   height: 35px;
   border-radius: 0.3em;
   background-color: var(--dark-03);
@@ -91,4 +92,13 @@
   align-items: center;
   justify-content: center;
   font-size: 1.3em;
+}
+
+.card__project__stars {
+  position: absolute;
+  padding: 10px 0;
+  /* color: var(--dark-05); */
+  width: 100%;
+  display: flex;
+  /* justify-content: center; */
 }

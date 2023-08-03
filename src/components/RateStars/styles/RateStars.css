@@ -1,0 +1,7 @@
+.rate-stars {
+  font-size: 1.2em;
+  color: gold;
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+}

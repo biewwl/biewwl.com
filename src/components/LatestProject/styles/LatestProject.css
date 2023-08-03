@@ -73,14 +73,6 @@
   font-weight: 600;
 }
 
-.latest-project__details__rate {
-  font-size: 1.2em;
-  color: gold;
-  display: flex;
-  gap: 5px;
-  cursor: pointer;
-}
-
 .latest-project__details__link {
   border-width: 1px;
   border-style: solid;

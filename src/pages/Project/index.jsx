@@ -8,11 +8,13 @@ import tools from "../../data/tools";
 import DevToolsSection from "../../components/DevToolsSection";
 import "./styles/Project.css";
 import "./styles/Project-mobile.css";
+import RateStars from "../../components/RateStars";
 
 function Project() {
   const { projectName } = useParams();
   const projectData = getProjectData(projectName);
   const {
+    name,
     frontend,
     backend,
     design,
@@ -36,7 +38,8 @@ function Project() {
       <Header />
       <main className="project__main">
         <h2 className="project__main__project">Project</h2>
-        <h1 className="project__main__title">{projectName}</h1>
+        <h1 className="project__main__title">{name}</h1>
+        <RateStars name={name} />
         <div className="project__main__tags-dev">
           {frontend && (
             <span className="project__main__tags-dev--tag frontend">

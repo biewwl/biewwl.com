@@ -28,7 +28,7 @@
 
 .aside-menu__content__close-menu {
   height: 100%;
-  width: 100%;
+  flex-grow: 1;
 }
 
 .aside-menu__content__nav {
@@ -40,6 +40,8 @@
   align-items: flex-end;
   gap: 30px;
   min-width: 200px;
+  /* border-left: 1px solid var(--dark-00); */
+  box-shadow: 0 0 15px var(--dark-00);
 }
 
 .aside-menu__content__nav__icon {
@@ -50,4 +52,5 @@
   color: var(--medium-00);
   text-decoration: none;
   font-size: 1em;
+  white-space: nowrap;
 }

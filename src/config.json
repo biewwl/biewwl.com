@@ -2,7 +2,8 @@
   "routes": {
     "home": "/",
     "projects": "/projects",
-    "project": "/project/:projectName"
+    "project": "/project/:projectName",
+    "saved": "/project/saved"
   },
   "pages": {
     "home": {
@@ -25,12 +26,14 @@
     }
   },
   "components": {
-    "header": {
+    "aside": {
       "home_link_text": "Home",
-      "projects_link_text": "Projects"
+      "projects_link_text": "Projects",
+      "saved_link_text": "Rated Projects"
     }
   },
   "localStorage": {
-    "rate_key": "biewwl.com---rate--project:::"
+    "rate_key": "biewwl.com---rate--project:::",
+    "rate_keys_list": "biewwl.com---rate--list"
   }
 }

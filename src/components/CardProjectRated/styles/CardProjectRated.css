@@ -1,0 +1,58 @@
+.card-project-rated {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-project-rated__image {
+  width: 280px;
+  border: 1px solid var(--dark-03);
+}
+
+.card-project-rated__name {
+  color: var(--medium-00);
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.card-project-rated:not(:hover) .card-project-rated__stars {
+  height: 0;
+}
+
+.card-project-rated__stars {
+  background-color: #000000af;
+  width: 100%;
+  position: absolute;
+  height: 175.75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: 0.5s;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-project-rated__stars__actions {
+  height: 45px;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.card-project-rated__stars__actions__button {
+  background-color: var(--dark-03);
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  border-radius: 0.3em;
+  font-size: 1.3em;
+  color: var(--medium-00);
+}
+
+
