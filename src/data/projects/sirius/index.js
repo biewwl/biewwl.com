@@ -34,7 +34,8 @@ const data = {
   },
   images: [IMAGE_LOGIN, IMAGE_HOME, IMAGE_PROFILE],
   repository: "https://github.com/biewwl/reactgram",
-  figma: "",
+  figma:
+    "https://www.figma.com/file/AnnaSGxziIvdDRu41toAWs/Novo-Portf%C3%B3lio?type=design&node-id=21%3A36&mode=design&t=zlw4CM76EbJVvtfN-1",
   tags: [
     "react",
     "javascript",
@@ -47,7 +48,7 @@ const data = {
     "redux",
     "mysql",
     "jwt",
-    "docker"
+    "docker",
   ],
 };
 
