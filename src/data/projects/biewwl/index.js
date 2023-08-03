@@ -19,8 +19,8 @@ const data = {
     others: [figma],
   },
   images: [IMAGE_HOME, IMAGE_HOME_MID, IMAGE_PROJECTS],
-  repository: "github.com/biewwl",
-  figma: "figma.com",
+  repository: "https://github.com/biewwl/biewwl.com",
+  figma: "https://www.figma.com/file/AnnaSGxziIvdDRu41toAWs/Novo-Portf%C3%B3lio?type=design&node-id=21%3A36&mode=design&t=zlw4CM76EbJVvtfN-1",
   tags: ["uiux", "ui", "ux", "design", "figma"],
 };
 

@@ -21,6 +21,8 @@ function CardProject({ projectData }) {
 
   const [projectCover] = images;
 
+  console.log(figma);
+
   return (
     <section className="card-project">
       <img src={projectCover} alt="" className="card-project__image" />
