@@ -70,6 +70,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  margin: 40px 0;
 }
 
 .project__main__carrousel__arrow {
