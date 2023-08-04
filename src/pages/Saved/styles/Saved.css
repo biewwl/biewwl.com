@@ -8,23 +8,23 @@
 .saved__content__slogan {
   background-color: var(--dark-03--opc-00);
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
-  padding: 40px;
-  gap: 20px;
-  border-radius: 1em;
+  padding: 10px;
+  gap: 10px;
+  border-radius: 0.5em;
 }
 
 .saved__content__slogan__icon {
   color: var(--dark-06);
-  font-size: 3em;
+  font-size: 2em;
 }
 
 .saved__content__slogan__text {
   color: var(--dark-05);
-  font-size: 1.2em;
-  text-align: center;
+  font-size: 1em;
+  /* text-align: center; */
 }
 
 .saved__content__title-and-sort {

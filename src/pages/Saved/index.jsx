@@ -38,7 +38,7 @@ function Saved() {
       <Header />
       <main className="saved__content">
         <div className="saved__content__slogan">
-          <Icon icon="game-icons:stars-stack" className="saved__content__slogan__icon" />
+          <Icon icon="majesticons:plus" className="saved__content__slogan__icon" />
           <p className="saved__content__slogan__text">Browse projects you've rated 1 or more stars</p>
         </div>
         <div className="saved__content__title-and-sort">
