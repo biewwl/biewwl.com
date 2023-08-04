@@ -10,6 +10,14 @@
     padding: 0 10%;
   }
 
+  .projects__main__input__label__icon {
+    display: none;
+  }
+
+  .projects__main__input__label__search {
+    padding: 0 10px;
+  }
+
   .projects__main__section-title {
     width: 100%;
     padding: 0 20px;
