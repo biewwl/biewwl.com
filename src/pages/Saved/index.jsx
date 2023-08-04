@@ -8,9 +8,11 @@ import { Icon } from "@iconify/react";
 import CardProjectRated from "../../components/CardProjectRated";
 import "./styles/Saved.css";
 import "./styles/Saved-mobile.css";
+import { Link } from "react-router-dom";
 
 function Saved() {
   const { rate_keys_list, rate_key } = config.localStorage;
+  const { projects: projectsRoute } = config.routes;
   const projectsName = lS.get(rate_keys_list) ?? [];
   const [orderAsc, setOrderAsc] = useState(false);
 
@@ -37,10 +39,15 @@ function Saved() {
     <section>
       <Header />
       <main className="saved__content">
-        <div className="saved__content__slogan">
-          <Icon icon="majesticons:plus" className="saved__content__slogan__icon" />
-          <p className="saved__content__slogan__text">Browse projects you've rated 1 or more stars</p>
-        </div>
+        <Link to={projectsRoute} className="saved__content__slogan">
+          <Icon
+            icon="majesticons:plus"
+            className="saved__content__slogan__icon"
+          />
+          <p className="saved__content__slogan__text">
+            Browse projects you've rated 1 or more stars
+          </p>
+        </Link>
         <div className="saved__content__title-and-sort">
           <h1 className="saved__content__title-and-sort__title">
             Rated Projects
