@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
 }
 
 .projects__main__first-screen {
@@ -11,9 +10,9 @@
   flex-direction: column;
   align-items: center;
   gap: 40px;
-  min-height: calc(100vh - 120px);
+  /* min-height: calc(100vh - 120px); */
   justify-content: center;
-  padding-top: 80px;
+  padding-top: 120px;
 }
 
 .projects__main__icon {
