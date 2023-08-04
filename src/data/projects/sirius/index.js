@@ -20,7 +20,7 @@ const {
 } = tools;
 
 const data = {
-  name: "sirius figma",
+  name: "sirius",
   date: "07/30/2023",
   frontend: "biewwl",
   backend: "biewwl",
