@@ -10,6 +10,8 @@ function LatestProject() {
   const { project } = config.routes;
   const [pathToProject] = project.split(":");
 
+  const firstThreeImages = images.slice(0, 3);
+
   const releaseDate = () => {
     const monthNames = [
       "January",
@@ -35,7 +37,7 @@ function LatestProject() {
   return (
     <section className="latest-project">
       <section className="latest-project__images">
-        {images.map((image, i) => (
+        {firstThreeImages.map((image, i) => (
           <img
             src={image}
             alt=""

@@ -9,9 +9,11 @@ import DevToolsSection from "../../components/DevToolsSection";
 import "./styles/Project.css";
 import "./styles/Project-mobile.css";
 import RateStars from "../../components/RateStars";
+import { useState } from "react";
 
 function Project() {
   const { projectName } = useParams();
+  const [imageIndex, setImageIndex] = useState(0);
   const projectData = getProjectData(projectName);
   const {
     name,
@@ -29,9 +31,27 @@ function Project() {
     },
   } = projectData;
 
-  const [coverImage] = images;
+  const coverImage = images[imageIndex];
 
   const { figma_link_text, repository_link_text } = config.pages.project;
+
+  const handleNextImage = () => {
+    const lastImageIndex = images.length - 1;
+    if (imageIndex === lastImageIndex) {
+      setImageIndex(0);
+    } else {
+      setImageIndex(imageIndex + 1);
+    }
+  };
+
+  const handlePrevImage = () => {
+    const lastImageIndex = images.length - 1;
+    if (imageIndex === 0) {
+      setImageIndex(lastImageIndex);
+    } else {
+      setImageIndex(imageIndex - 1);
+    }
+  };
 
   return (
     <div className="project">
@@ -85,7 +105,25 @@ function Project() {
             </Link>
           )}
         </div>
-        <img src={coverImage} alt="" className="project__main__image" />
+        <div className="project__main__carrousel">
+          <button
+            onClick={handlePrevImage}
+            className="project__main__carrousel__arrow --prev"
+          >
+            <Icon icon="ep:arrow-up-bold" rotate={3} />
+          </button>
+          <img
+            src={coverImage}
+            alt=""
+            className="project__main__carrousel__image"
+          />
+          <button
+            onClick={handleNextImage}
+            className="project__main__carrousel__arrow --next"
+          >
+            <Icon icon="ep:arrow-up-bold" rotate={1} />
+          </button>
+        </div>
         {frontendTools && (
           <DevToolsSection title="Front End Tools" icons={frontendTools} />
         )}
