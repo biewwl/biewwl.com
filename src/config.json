@@ -18,7 +18,8 @@
     "projects": {
       "slogan":"Discover new templates and designs",
       "placeholder_search_text": "Name, Framework, Library...",
-      "section_projects_title": "All projects developed"
+      "section_projects_title": "All projects developed",
+      "identifier_tool": "+"
     },
     "project": {
       "figma_link_text": "Design",

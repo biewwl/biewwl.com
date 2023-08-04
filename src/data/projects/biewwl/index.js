@@ -4,7 +4,7 @@ import IMAGE_PROJECT from "./images/Project.png";
 import IMAGE_PROJECTS from "./images/Projects.png";
 import IMAGE_SAVED from "./images/Saved.png";
 
-const { figma, html, javascript, react, css } = tools;
+const { figma, html, javascript, react, css, git, github } = tools;
 
 const data = {
   name: "biewwl",
@@ -16,8 +16,8 @@ const data = {
     "This project is a concept for a portfolio style website and frontend website. Created in Figma in a responsive and minimalist way.",
   tools: {
     frontend: [html, javascript, react, css],
-    backend: "",
-    others: [figma],
+    backend: [],
+    others: [git, github, figma],
   },
   images: [IMAGE_HOME, IMAGE_PROJECT, IMAGE_PROJECTS, IMAGE_SAVED],
   repository: "https://github.com/biewwl/biewwl.com",

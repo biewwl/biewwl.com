@@ -1,15 +1,32 @@
 import { Icon } from "@iconify/react";
+import { useState } from "react";
 import Header from "../../components/Header";
 import config from "../../config.json";
 import Footer from "../../components/Footer";
 import CardProject from "../../components/CardProject";
 import projects from "../../data/projects";
+import {
+  filterByTools,
+  filterByWords,
+  generateTags,
+} from "../../utils/filterSearch";
 import "./styles/Projects.css";
 import "./styles/Projects-mobile.css";
 
 function Projects() {
   const { slogan, placeholder_search_text, section_projects_title } =
     config.pages.projects;
+
+  const [querySearch, setQuerySearch] = useState("");
+  const [projectsList, setProjectsList] = useState(projects);
+
+  const handleChangeQuery = ({ target }) => {
+    const inputText = target.value.toLowerCase();
+    const filteredByWords = filterByWords(inputText, projects);
+    const filteredByTools = filterByTools(inputText, filteredByWords);
+    setProjectsList(filteredByTools);
+    setQuerySearch(target.value);
+  };
 
   return (
     <div className="projects">
@@ -31,6 +48,8 @@ function Projects() {
               placeholder={placeholder_search_text}
               className="projects__main__input__label__search"
               id="projects__main__input__label__search"
+              value={querySearch}
+              onChange={handleChangeQuery}
             />
           </label>
           <div className="projects__main__image" />
@@ -38,8 +57,11 @@ function Projects() {
         <h3 className="projects__main__section-title">
           {section_projects_title}
         </h3>
+        <div className="projects__main__search-tags">
+          {generateTags(querySearch)}
+        </div>
         <section className="projects__main__cards">
-          {projects.map((projectData, i) => (
+          {projectsList.map((projectData, i) => (
             <CardProject projectData={projectData} key={i} />
           ))}
         </section>

@@ -5,11 +5,11 @@
   gap: 5px;
   align-items: center;
   transition: 0.5s;
-  cursor: pointer;
+  cursor: default;
 }
 
-.tool-line:not(:hover) {
-  background-color: var(--dark-03) !important;
+.tool-line.--grey:not(:hover) {
+  background: var(--dark-03) !important;
   color: var(--medium-00);
 }
 

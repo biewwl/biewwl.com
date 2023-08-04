@@ -31,7 +31,7 @@ const tools = {
   },
   react: {
     icon: "simple-icons:react",
-    name: "React.js",
+    name: "React",
     iconColor: "#61DAFB",
   },
   redux: {
