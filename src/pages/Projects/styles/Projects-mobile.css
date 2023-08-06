@@ -1,5 +1,4 @@
 @media screen and (max-width: 600px) {
-
   .projects__main__first-screen {
     padding-top: 150px;
   }
@@ -26,5 +25,16 @@
 
   .projects__main__cards {
     padding-bottom: 100px;
+  }
+}
+
+@media (pointer: coarse) {
+  .projects__main__search-tags {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: start;
+  }
+  .projects__main__search-tags::-webkit-scrollbar {
+    display: none;
   }
 }

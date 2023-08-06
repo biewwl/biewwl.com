@@ -4,11 +4,12 @@ import Header from "../../components/Header";
 import config from "../../config.json";
 import Footer from "../../components/Footer";
 import CardProject from "../../components/CardProject";
+import ToolLine from "../../components/ToolLine";
 import projects from "../../data/projects";
 import {
   filterByTools,
   filterByWords,
-  generateTags,
+  usedTools,
 } from "../../utils/filterSearch";
 import "./styles/Projects.css";
 import "./styles/Projects-mobile.css";
@@ -19,13 +20,35 @@ function Projects() {
 
   const [querySearch, setQuerySearch] = useState("");
   const [projectsList, setProjectsList] = useState(projects);
+  const [searchTools, setSearchTools] = useState([]);
 
   const handleChangeQuery = ({ target }) => {
     const inputText = target.value.toLowerCase();
     const filteredByWords = filterByWords(inputText, projects);
-    const filteredByTools = filterByTools(inputText, filteredByWords);
+    const filteredByTools = filterByTools(filteredByWords, searchTools);
     setProjectsList(filteredByTools);
     setQuerySearch(target.value);
+  };
+
+  const selectedTool = (name) =>
+    searchTools.some((toolName) => toolName === name);
+
+  const handleClickTool = (name) => {
+    const alreadySelected = selectedTool(name);
+    let currentTools = searchTools;
+    if (!alreadySelected) {
+      currentTools = [...searchTools, name];
+      setSearchTools(currentTools);
+    } else {
+      const newSearchTools = searchTools.filter(
+        (toolName) => toolName !== name
+      );
+      currentTools = newSearchTools;
+    }
+    setSearchTools(currentTools);
+    const filteredByWords = filterByWords(querySearch, projects);
+    const filteredByTools = filterByTools(filteredByWords, currentTools);
+    setProjectsList(filteredByTools);
   };
 
   return (
@@ -58,7 +81,17 @@ function Projects() {
           {section_projects_title}
         </h3>
         <div className="projects__main__search-tags">
-          {generateTags(querySearch)}
+          {usedTools().map(({ name, icon, iconColor }, i) => (
+            <div onClick={() => handleClickTool(name)} key={i}>
+              <ToolLine
+                name={name}
+                icon={icon}
+                iconColor={iconColor}
+                colorful={selectedTool(name)}
+                hover={false}
+              />
+            </div>
+          ))}
         </div>
         <section className="projects__main__cards">
           {projectsList.map((projectData, i) => (

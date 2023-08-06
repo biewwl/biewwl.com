@@ -8,7 +8,12 @@
   cursor: default;
 }
 
-.tool-line.--grey:not(:hover) {
+.tool-line.--grey {
+  background: var(--dark-03) !important;
+  color: var(--medium-00);
+}
+
+.tool-line.--grey.--hover-effect:not(:hover) {
   background: var(--dark-03) !important;
   color: var(--medium-00);
 }

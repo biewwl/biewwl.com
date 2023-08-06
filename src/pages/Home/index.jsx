@@ -29,9 +29,9 @@ function Home() {
   const { projects } = config.routes;
 
   const homeIcons = () => {
-    const { html, express, mongodb, docker, mysql, sequelize, npm, react } =
+    const { html, express, mongo, docker, mysql, sequelize, npm, react } =
       tools;
-    return [html, express, mongodb, docker, mysql, sequelize, npm, react];
+    return [html, express, mongo, docker, mysql, sequelize, npm, react];
   };
 
   return (

@@ -1,7 +1,7 @@
 const tools = {
   html: {
-    name: "Html",
     icon: "simple-icons:html5",
+    name: "Html",
     iconColor: "#E34F26",
   },
   css: {
@@ -46,7 +46,7 @@ const tools = {
   },
   node: {
     icon: "simple-icons:nodedotjs",
-    name: "Node.js",
+    name: "Node",
     iconColor: "#339933",
   },
   jest: {
@@ -96,7 +96,7 @@ const tools = {
   },
   tailwind: {
     icon: "simple-icons:tailwindcss",
-    name: "Tailwind CSS",
+    name: "Tailwind",
     iconColor: "#06B6D4",
   },
   jwt: {
@@ -109,9 +109,9 @@ const tools = {
     name: "Sequelize",
     iconColor: "#52B0E7",
   },
-  mongodb: {
+  mongo: {
     icon: "simple-icons:mongodb",
-    name: "MongoDB",
+    name: "Mongo",
     iconColor: "#47A248",
   },
   figma: {

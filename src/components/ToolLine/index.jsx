@@ -1,8 +1,10 @@
 import { Icon } from "@iconify/react";
 import "./styles/ToolLine.css";
 
-function ToolLine({ name, icon, iconColor, colorful = false }) {
-  const className = colorful ? "tool-line" : "tool-line --grey";
+function ToolLine({ name, icon, iconColor, colorful = false, hover = true }) {
+  const className = colorful
+    ? "tool-line"
+    : `tool-line --grey${hover ? " --hover-effect" : ""}`;
 
   return (
     <div className={className} style={{ backgroundColor: iconColor }}>

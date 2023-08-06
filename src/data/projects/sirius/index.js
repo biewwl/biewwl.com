@@ -17,6 +17,7 @@ const {
   git,
   github,
   docker,
+  node,
 } = tools;
 
 const data = {
@@ -28,8 +29,8 @@ const data = {
   description:
     "This project is a FULL STACK application with Front-end in React.js and its Backend in Express with MySQL. It features tokenized encryption using the JWT Library.",
   tools: {
-    frontend: [html, javascript, css, react, redux],
-    backend: [npm, javascript, express, mysql, jwt, sequelize],
+    frontend: [html, javascript, css, react, redux, node],
+    backend: [npm, javascript, express, mysql, jwt, sequelize, node],
     others: [git, github, docker],
   },
   images: [IMAGE_LOGIN, IMAGE_HOME, IMAGE_PROFILE],
