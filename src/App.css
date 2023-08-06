@@ -10,26 +10,7 @@
   font-family: League Spartan;
 }
 
-:root {
-  --dark-00: #131313;
-  --dark-00--opc-00: #131313c0;
-  --dark-01: #181818;
-  --dark-03: #262626;
-  --dark-03--opc-00: #26262679;
-  --dark-05: #4b4b4b;
-  --dark-06: #777;
-  --medium-00: #8a8a8a;
-  --medium-00--opc-00: #8a8a8a2a;
-  --medium-01: #d9d9d9;
-  --medium-02: #ffffff;
-
-  --tag-frontend: #5f657d;
-  --tag-backend: #8c5353;
-  --tag-ui-ux: #8f7e41;
-}
-
 .App {
-  background: var(--dark-00);
   min-height: 100vh;
 }
 

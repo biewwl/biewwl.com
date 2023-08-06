@@ -13,10 +13,11 @@ import ToolBlock from "../../components/ToolBlock";
 import Footer from "../../components/Footer";
 import config from "../../config.json";
 import LatestProject from "../../components/LatestProject";
+import { connect } from "react-redux";
 import "./styles/Home.css";
 import "./styles/Home-mobile.css";
 
-function Home() {
+function Home({ theme }) {
   const {
     welcome_message,
     slogan,
@@ -35,12 +36,16 @@ function Home() {
   };
 
   return (
-    <div className="home">
+    <div className={`home bg-${theme}-00`}>
       <Header />
       <section className="home__presentation">
         <img src={biewwl} alt="" className="home__presentation__image" />
-        <p className="home__presentation__welcome-message">{welcome_message}</p>
-        <h1 className="home__presentation__slogan">{slogan}</h1>
+        <p className={`home__presentation__welcome-message c-${theme}-00`}>
+          {welcome_message}
+        </p>
+        <h1 className={`home__presentation__slogan c-gradient-${theme}`}>
+          {slogan}
+        </h1>
         <Link to={projects} className="home__presentation__discovery-btn">
           <span className="home__presentation__discovery-btn__text">
             {projects_link_text}
@@ -86,4 +91,8 @@ function Home() {
   );
 }
 
-export default Home;
+const mapStateToProps = (state) => ({
+  theme: state.theme,
+});
+
+export default connect(mapStateToProps)(Home);

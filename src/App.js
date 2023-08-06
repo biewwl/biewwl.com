@@ -4,8 +4,9 @@ import Projects from "./pages/Projects";
 import config from "./config.json";
 import Project from "./pages/Project";
 import { useCallback, useEffect } from "react";
-import "./App.css";
 import Saved from "./pages/Saved";
+import "./App.css";
+import "./css/theme.css";
 
 function App() {
   const { home, projects, project, saved } = config.routes;

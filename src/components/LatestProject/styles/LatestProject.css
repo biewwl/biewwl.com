@@ -15,7 +15,7 @@
   justify-content: flex-end;
   height: 70%;
   width: 100%;
-  transform: rotateX(40deg) translateX(-55px);
+  transform: translateX(-55px);
 }
 
 .latest-project__images__image-0,

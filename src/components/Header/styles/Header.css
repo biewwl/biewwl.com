@@ -7,8 +7,7 @@
   width: 100%;
   position: sticky;
   top: 0;
-  background-color: var(--dark-00);
-  z-index: 100;
+  z-index: 1000;
 }
 
 .header__logo__and__name {
@@ -23,7 +22,6 @@
   padding: 8px;
   object-fit: contain;
   border-radius: 0.8em;
-  background: #ffffff0d;
 }
 
 .header__logo__and__name__name {
