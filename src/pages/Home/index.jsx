@@ -54,11 +54,17 @@ function Home({ theme }) {
       </section>
       <Arrow />
       <section className="home__icons">
-        {homeIcons().map(({ icon }, i) => (
-          <Icon icon={icon} className="home__icons__icon" key={i} />
+        {homeIcons().map(({ icon, iconColor }, i) => (
+          <Icon
+            icon={icon}
+            className={`home__icons__icon c-${theme}-02`}
+            key={i}
+          />
         ))}
       </section>
-      <h3 className="home__section-title">{section_skills_title}</h3>
+      <h3 className={`home__section-title c-gradient-${theme}`}>
+        {section_skills_title}
+      </h3>
       <section className="home__cards">
         {skills.map(({ icon, name, description }, i) => (
           <CardSkill

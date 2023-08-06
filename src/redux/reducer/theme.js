@@ -1,4 +1,4 @@
-const initialStore = "dark";
+const initialStore = "light";
 
 const theme = (prevStore = initialStore, action) => {
   return prevStore;
