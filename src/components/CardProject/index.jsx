@@ -23,7 +23,7 @@ function CardProject({ projectData, theme }) {
   const [projectCover] = images;
 
   return (
-    <section className={`card-project bg-${theme}-01 bb-${theme}-03`}>
+    <section className={`card-project bg-${theme}-01 bb-${theme}-02`}>
       <img src={projectCover} alt="" className="card-project__image" />
       <div className="card-project__details">
         <h4 className={`card-project__details__title c-${theme}-02`}>{name}</h4>

@@ -81,6 +81,10 @@
   border: 1px solid var(--dark-03);
 }
 
+.bb-dark-02 {
+  border: 1px solid var(--dark-03);
+}
+
 /* Light */
 
 .bg-light-00 {
@@ -131,5 +135,9 @@
 }
 
 .bb-light-03 {
+  border: 1px solid var(--light-02);
+}
+
+.bb-light-02 {
   border: 1px solid var(--light-02);
 }
