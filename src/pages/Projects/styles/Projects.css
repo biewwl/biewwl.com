@@ -16,7 +16,6 @@
 
 .projects__main__icon {
   font-size: 2.8em;
-  color: var(--dark-05);
 }
 
 .projects__main__slogan {
@@ -24,10 +23,6 @@
   font-weight: 400;
   width: 500px;
   text-align: center;
-  background: linear-gradient(180deg, var(--medium-01) 0%, #ffffff00 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .projects__main__input__label {
@@ -40,12 +35,10 @@
 .projects__main__input__label__icon {
   position: absolute;
   font-size: 1.4em;
-  color: var(--dark-05);
   left: 10px;
 }
 
 .projects__main__input__label__search {
-  background-color: var(--dark-03);
   border: none;
   height: 40px;
   width: 280px;
@@ -56,18 +49,28 @@
 }
 
 .projects__main__input__label__search::placeholder {
-  color: var(--dark-05);
+  color: var(--medium-00);
 }
 
 .projects__main__image {
   width: 100%;
   height: 30vw;
   flex-shrink: 0;
+}
+
+.projects__main__image.--dark {
   background: linear-gradient(180deg, transparent 0%, var(--dark-00) 100%),
     url("../../../assets/Meteor.svg"),
     var(--dark-00) 0px 0px / 100% 199.698% no-repeat;
-  background-size: cover;
-}
+    background-size: cover;
+  }
+
+.projects__main__image.--light {
+  background: linear-gradient(180deg, transparent 0%, var(--light-00) 100%),
+    url("../../../assets/Meteor.svg"),
+    var(--light-00) 0px 0px / 100% 199.698% no-repeat;
+    background-size: cover;
+  }
 
 .projects__main__section-title {
   width: 502px;
@@ -77,10 +80,6 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  background: linear-gradient(169deg, var(--medium-01) 0%, #ffffff00 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   margin: 40px 0 10px 0;
   width: 80%;
 }

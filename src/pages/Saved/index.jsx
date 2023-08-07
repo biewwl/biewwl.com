@@ -9,8 +9,9 @@ import CardProjectRated from "../../components/CardProjectRated";
 import "./styles/Saved.css";
 import "./styles/Saved-mobile.css";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
-function Saved() {
+function Saved({ theme }) {
   const { rate_keys_list, rate_key } = config.localStorage;
   const { projects: projectsRoute } = config.routes;
   const projectsName = lS.get(rate_keys_list) ?? [];
@@ -36,25 +37,25 @@ function Saved() {
   };
 
   return (
-    <section>
+    <section className={`saved bg-${theme}-00`}>
       <Header />
       <main className="saved__content">
-        <Link to={projectsRoute} className="saved__content__slogan">
+        <Link to={projectsRoute} className={`saved__content__slogan bg-${theme}-02`}>
           <Icon
             icon="majesticons:plus"
-            className="saved__content__slogan__icon"
+            className={`saved__content__slogan__icon c-${theme}-05`}
           />
-          <p className="saved__content__slogan__text">
+          <p className={`saved__content__slogan__text c-${theme}-05`}>
             Browse projects you've rated 1 or more stars
           </p>
         </Link>
         <div className="saved__content__title-and-sort">
-          <h1 className="saved__content__title-and-sort__title">
+          <h1 className={`saved__content__title-and-sort__title c-gradient-${theme}`}>
             Rated Projects
           </h1>
           <button
             onClick={handleSort}
-            className="saved__content__title-and-sort__button"
+            className={`saved__content__title-and-sort__button c-${theme}-05`}
           >
             <Icon icon={iconOrder} />
           </button>
@@ -70,4 +71,8 @@ function Saved() {
   );
 }
 
-export default Saved;
+const mapStateToProps = (state) => ({
+  theme: state.theme.theme,
+});
+
+export default connect(mapStateToProps)(Saved);

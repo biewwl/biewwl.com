@@ -21,7 +21,6 @@
 }
 
 .card-project-rated__stars {
-  background-color: #000000af;
   width: 100%;
   position: absolute;
   height: 175.75px;
@@ -32,6 +31,7 @@
   transition: 0.5s;
   flex-direction: column;
   gap: 20px;
+  backdrop-filter: blur(5px);
 }
 
 .card-project-rated__stars__actions {
@@ -44,7 +44,6 @@
 }
 
 .card-project-rated__stars__actions__button {
-  background-color: var(--dark-03);
   height: 45px;
   display: flex;
   align-items: center;

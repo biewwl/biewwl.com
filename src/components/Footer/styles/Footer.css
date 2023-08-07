@@ -2,7 +2,6 @@
   display: flex;
   padding: 80px;
   gap: 120px;
-  background-color: var(--dark-01);
   width: 100%;
   margin-top: 80px;
 }
@@ -14,13 +13,11 @@
 }
 
 .footer__links__title, .footer__contact__title {
-  color: var(--medium-00);
   font-weight: 300;
   font-size: 1.8em;
   margin-block-end: 20px;
 }
 
 .footer__links__link, .footer__contact__item {
-  color: var(--dark-05);
   text-decoration: none;
 }

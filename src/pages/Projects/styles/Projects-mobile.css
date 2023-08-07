@@ -34,7 +34,7 @@
     overflow-x: auto;
     justify-content: start;
   }
-  .projects__main__search-tags::-webkit-scrollbar {
+  /* .projects__main__search-tags::-webkit-scrollbar {
     display: none;
-  }
+  } */
 }

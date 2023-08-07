@@ -11,10 +11,11 @@ import {
   filterByWords,
   usedTools,
 } from "../../utils/filterSearch";
+import { connect } from "react-redux";
 import "./styles/Projects.css";
 import "./styles/Projects-mobile.css";
 
-function Projects() {
+function Projects({ theme }) {
   const { slogan, placeholder_search_text, section_projects_title } =
     config.pages.projects;
 
@@ -52,32 +53,35 @@ function Projects() {
   };
 
   return (
-    <div className="projects">
+    <div className={`projects bg-${theme}-00`}>
       <Header />
       <main className="projects__main">
         <section className="projects__main__first-screen">
-          <Icon icon="iconoir:design-nib" className="projects__main__icon" />
-          <h1 className="projects__main__slogan">{slogan}</h1>
+          <Icon
+            icon="iconoir:design-nib"
+            className={`projects__main__icon c-${theme}-05`}
+          />
+          <h1 className={`projects__main__slogan c-gradient-${theme}`}>{slogan}</h1>
           <label
             htmlFor="projects__main__input__label__search"
             className="projects__main__input__label"
           >
             <Icon
               icon="ep:search"
-              className="projects__main__input__label__icon"
+              className={`projects__main__input__label__icon c-${theme}-05`}
             />
             <input
               type="search"
               placeholder={placeholder_search_text}
-              className="projects__main__input__label__search"
+              className={`projects__main__input__label__search bg-${theme}-02`}
               id="projects__main__input__label__search"
               value={querySearch}
               onChange={handleChangeQuery}
             />
           </label>
-          <div className="projects__main__image" />
+          <div className={`projects__main__image --${theme}`} />
         </section>
-        <h3 className="projects__main__section-title">
+        <h3 className={`projects__main__section-title c-gradient-${theme}`}>
           {section_projects_title}
         </h3>
         <div className="projects__main__search-tags">
@@ -104,4 +108,8 @@ function Projects() {
   );
 }
 
-export default Projects;
+const mapStateToProps = (state) => ({
+  theme: state.theme.theme,
+});
+
+export default connect(mapStateToProps)(Projects);

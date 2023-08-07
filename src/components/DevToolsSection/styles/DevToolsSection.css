@@ -8,10 +8,6 @@
   font-weight: 400;
   text-transform: uppercase;
   font-size: 1em;
-  background: linear-gradient(169deg, var(--medium-02) 0%, transparent 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .dev-tools-section__icons {

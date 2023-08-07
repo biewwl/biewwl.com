@@ -1,20 +1,21 @@
 .tool-line {
-  display: flex;
-  padding: 5px 10px;
-  border-radius: 0.3em;
-  gap: 5px;
   align-items: center;
-  transition: 0.5s;
+  border-radius: 0.3em;
+  color: var(--dark-03);
   cursor: default;
+  display: flex;
+  gap: 5px;
+  padding: 5px 10px;
+  transition: 0.5s;
 }
 
-.tool-line.--grey {
-  background: var(--dark-03) !important;
+.tool-line.--grey:not(.--hover-effect) {
+  background: var(--medium-00--opc-00) !important;
   color: var(--medium-00);
 }
 
 .tool-line.--grey.--hover-effect:not(:hover) {
-  background: var(--dark-03) !important;
+  background: var(--medium-00--opc-00) !important;
   color: var(--medium-00);
 }
 

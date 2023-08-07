@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import "./styles/CertificateLink.css";
 import "./styles/CertificateLink-mobile.css";
+import { connect } from "react-redux";
 
-function CertificateLink({numb, name, url}) {
+function CertificateLink({ numb, name, url, theme }) {
   return (
-    <Link to={url} className="certificate-link">
+    <Link to={url} className={`certificate-link bg-gradient-${theme}`}>
       <span className="certificate-link__numb">{numb}</span>
-      <p className="certificate-link__name">{name}</p>
+      <p className={`certificate-link__name c-${theme}-05`}>{name}</p>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="25"
@@ -24,4 +25,8 @@ function CertificateLink({numb, name, url}) {
   );
 }
 
-export default CertificateLink;
+const mapStateToProps = (state) => ({
+  theme: state.theme.theme,
+});
+
+export default connect(mapStateToProps)(CertificateLink);

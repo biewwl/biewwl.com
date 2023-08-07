@@ -27,7 +27,7 @@ const tools = {
   github: {
     icon: "simple-icons:github",
     name: "Github",
-    iconColor: "#fff",
+    iconColor: "#8a8a8a",
   },
   react: {
     icon: "simple-icons:react",
@@ -82,7 +82,7 @@ const tools = {
   express: {
     icon: "simple-icons:express",
     name: "Express",
-    iconColor: "#fff",
+    iconColor: "#8a8a8a",
   },
   postman: {
     icon: "simple-icons:postman",
@@ -102,7 +102,7 @@ const tools = {
   jwt: {
     icon: "simple-icons:jsonwebtokens",
     name: "JWT",
-    iconColor: "#fff",
+    iconColor: "#8a8a8a",
   },
   sequelize: {
     icon: "simple-icons:sequelize",

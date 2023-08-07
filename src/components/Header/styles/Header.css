@@ -25,15 +25,10 @@
 }
 
 .header__logo__and__name__name {
-  color: var(--medium-00);
   text-align: center;
   font-family: League Spartan;
   font-size: 1.2em;
   font-weight: 400;
-}
-
-.header__logo__and__name__name--js {
-  color: var(--medium-01);
 }
 
 .header__nav {

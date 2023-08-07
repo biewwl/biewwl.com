@@ -1,8 +1,8 @@
 .card-project {
-  background-color: var(--dark-01);
   width: 280px;
-  box-shadow: 0 0 5px var(--dark-03);
   position: relative;
+  border-radius: 0.5em;
+  overflow: hidden;
 }
 
 .card-project__image {
@@ -17,14 +17,12 @@
 }
 
 .card-project__details__title {
-  color: var(--medium-00);
   font-size: 1.4em;
   font-weight: 400;
   text-transform: capitalize;
 }
 
 .card-project__details__description {
-  color: var(--dark-05);
   font-size: 0.8em;
   height: 50px;
   overflow: hidden;
@@ -71,7 +69,6 @@
 
 .card-project__details__links__link-to-project {
   flex-grow: 1;
-  background-color: var(--dark-03);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -86,7 +83,6 @@
   width: 35px;
   height: 35px;
   border-radius: 0.3em;
-  background-color: var(--dark-03);
   color: var(--dark-05);
   display: flex;
   align-items: center;

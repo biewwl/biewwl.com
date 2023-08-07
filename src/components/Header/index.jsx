@@ -9,8 +9,8 @@ function Header({ theme }) {
     <header className={`header bg-${theme}-00`}>
       <div className="header__logo__and__name">
         <img src={logo} alt="logo" className={`header__logo__and__name__logo bg-${theme}-03--opc`} />
-        <h1 className="header__logo__and__name__name">
-          biewwl<span className="header__logo__and__name__name--js">.js</span>
+        <h1 className={`header__logo__and__name__name c-${theme}-03`}>
+          biewwl<span className={`header__logo__and__name__name--js c-${theme}-05`}>.js</span>
         </h1>
       </div>
       <AsideMenu />
@@ -19,7 +19,7 @@ function Header({ theme }) {
 }
 
 const mapStateToProps = (state) => ({
-  theme: state.theme
+  theme: state.theme.theme
 })
 
 export default connect(mapStateToProps)(Header);

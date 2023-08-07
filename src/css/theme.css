@@ -2,27 +2,30 @@
   --dark-00: #131313;
   --dark-00--opc-00: #131313c0;
   --dark-01: #181818;
+  --dark-02: #222;
   --dark-03: #262626;
   --dark-03--opc-00: #26262679;
+  --dark-04: #303030;
   --dark-05: #4b4b4b;
   --dark-06: #777;
 
   --medium-00: #8a8a8a;
   --medium-00--opc-00: #8a8a8a2a;
   --medium-01: #d9d9d9;
-  --medium-02: #ffffff;
+  --medium-02: #dbdbdb;
 
-  --light-00: #ececec;
+  --light-00: #fff;
   --light-00--opc-00: #f6f9ff8c;
   --light-01: #f0f0f0;
+  --light-02: #e2e2e2;
   --light-03: #d3d3d3;
-  --light-03--opc-00: #d3d3d373;
+  --light-03--opc-00: #ffffffea;
   --light-05: #c4c4c4;
   --light-06: #b1b1b1;
 
-  --tag-frontend: #5f657d;
-  --tag-backend: #8c5353;
-  --tag-ui-ux: #8f7e41;
+  --tag-frontend: #76b8f7;
+  --tag-backend: #e78888;
+  --tag-ui-ux: #e7ce73;
 }
 
 /* Dark Theme */
@@ -35,27 +38,43 @@
   background-color: var(--dark-01);
 }
 
+.bg-dark-02 {
+  background-color: var(--dark-02);
+}
+
 .bg-dark-03 {
   background-color: var(--dark-03);
 }
 
 .bg-dark-03--opc {
-  background-color: var(--dark-03--opc-00);
+  background-color: var(--dark-00--opc-00);
 }
 
 .c-dark-00 {
-  color: var(--medium-01);
+  color: var(--light-00);
 }
 
 .c-dark-02 {
-  color: var(--dark-05);
+  color: var(--medium-02);
+}
+
+.c-dark-03 {
+  color: var(--medium-01);
+}
+
+.c-dark-05 {
+  color: var(--medium-00);
 }
 
 .c-gradient-dark {
-  background: linear-gradient(180deg, var(--medium-01) 0%, #ffffff00 100%);
+  background: linear-gradient(180deg, var(--medium-01) 0%, transparent 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.bg-gradient-dark {
+  background: linear-gradient(90deg, var(--dark-03) 0%, var(--dark-00) 100%);
 }
 
 .bb-dark-03 {
@@ -70,6 +89,10 @@
 
 .bg-light-01 {
   background-color: var(--light-01);
+}
+
+.bg-light-02 {
+  background-color: var(--light-02);
 }
 
 .bg-light-03 {
@@ -88,13 +111,25 @@
   color: var(--dark-03);
 }
 
+.c-light-03 {
+  color: var(--dark-04);
+}
+
+.c-light-05 {
+  color: var(--medium-00);
+}
+
 .c-gradient-light {
-  background: linear-gradient(180deg, var(--dark-00) 0%, #ffffff00 100%);
+  background: linear-gradient(180deg, var(--dark-04) 0%, var(--medium-01) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+.bg-gradient-light {
+  background: linear-gradient(90deg, var(--light-01) 0%, var(--light-00) 100%);
+}
+
 .bb-light-03 {
-  border: 1px solid var(--light-03);
+  border: 1px solid var(--light-02);
 }

@@ -59,6 +59,7 @@ function Home({ theme }) {
             icon={icon}
             className={`home__icons__icon c-${theme}-02`}
             key={i}
+            color={theme === "light" ? iconColor : ""}
           />
         ))}
       </section>
@@ -76,17 +77,23 @@ function Home({ theme }) {
         ))}
       </section>
       <Arrow />
-      <h3 className="home__section-title">{section_certificates_title}</h3>
+      <h3 className={`home__section-title c-gradient-${theme}`}>
+        {section_certificates_title}
+      </h3>
       <section className="home__certificates">
         {certificates.map(({ url, name }, i) => (
           <CertificateLink numb={i + 1} url={url} name={name} key={i} />
         ))}
       </section>
       <Arrow />
-      <h3 className="home__section-title">{section_project_title}</h3>
+      <h3 className={`home__section-title c-gradient-${theme}`}>
+        {section_project_title}
+      </h3>
       <LatestProject />
       <Arrow />
-      <h3 className="home__section-title">{section_tools_title}</h3>
+      <h3 className={`home__section-title c-gradient-${theme}`}>
+        {section_tools_title}
+      </h3>
       <div className="home__tools">
         {toolsArray.map(({ icon, iconColor, name }, i) => (
           <ToolBlock icon={icon} iconColor={iconColor} name={name} key={i} />
@@ -98,7 +105,7 @@ function Home({ theme }) {
 }
 
 const mapStateToProps = (state) => ({
-  theme: state.theme,
+  theme: state.theme.theme,
 });
 
 export default connect(mapStateToProps)(Home);

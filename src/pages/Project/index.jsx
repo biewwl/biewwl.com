@@ -10,8 +10,9 @@ import "./styles/Project.css";
 import "./styles/Project-mobile.css";
 import RateStars from "../../components/RateStars";
 import { useState } from "react";
+import { connect } from "react-redux";
 
-function Project() {
+function Project({ theme }) {
   const { projectName } = useParams();
   const [imageIndex, setImageIndex] = useState(0);
   const projectData = getProjectData(projectName);
@@ -54,11 +55,13 @@ function Project() {
   };
 
   return (
-    <div className="project">
+    <div className={`project bg-${theme}-00`}>
       <Header />
       <main className="project__main">
-        <h2 className="project__main__project">Project</h2>
-        <h1 className="project__main__title">{name}</h1>
+        <h2 className={`project__main__project c-gradient-${theme}`}>
+          Project
+        </h2>
+        <h1 className={`project__main__title c-gradient-${theme}`}>{name}</h1>
         <RateStars name={name} />
         <div className="project__main__tags-dev">
           {frontend && (
@@ -80,26 +83,38 @@ function Project() {
             </span>
           )}
         </div>
-        <p className="project__main__description">{description}</p>
+        <p className={`project__main__description c-${theme}-02`}>
+          {description}
+        </p>
         <div className="project__main__links">
           {design && (
-            <Link to={figma} className="project__main__links__link">
+            <Link
+              to={figma}
+              className={`project__main__links__link bg-${theme}-02`}
+            >
               <Icon
                 icon={tools.figma.icon}
-                className="project__main__links__link__icon"
+                className={`project__main__links__link__icon c-${theme}-02`}
               />
-              <span className="project__main__links__link__text">
+              <span
+                className={`project__main__links__link__text c-${theme}-03`}
+              >
                 {figma_link_text}
               </span>
             </Link>
           )}
           {repository && (
-            <Link to={repository} className="project__main__links__link">
+            <Link
+              to={repository}
+              className={`project__main__links__link bg-${theme}-02`}
+            >
               <Icon
                 icon={tools.github.icon}
-                className="project__main__links__link__icon"
+                className={`project__main__links__link__icon c-${theme}-02`}
               />
-              <span className="project__main__links__link__text">
+              <span
+                className={`project__main__links__link__text c-${theme}-03`}
+              >
                 {repository_link_text}
               </span>
             </Link>
@@ -115,7 +130,7 @@ function Project() {
           <img
             src={coverImage}
             alt=""
-            className="project__main__carrousel__image"
+            className={`project__main__carrousel__image bb-${theme}-03`}
           />
           <button
             onClick={handleNextImage}
@@ -139,4 +154,8 @@ function Project() {
   );
 }
 
-export default Project;
+const mapStateToProps = (state) => ({
+  theme: state.theme.theme,
+});
+
+export default connect(mapStateToProps)(Project);

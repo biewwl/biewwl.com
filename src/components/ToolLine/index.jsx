@@ -1,5 +1,6 @@
 import { Icon } from "@iconify/react";
 import "./styles/ToolLine.css";
+import { connect } from "react-redux";
 
 function ToolLine({ name, icon, iconColor, colorful = false, hover = true }) {
   const className = colorful
@@ -14,4 +15,8 @@ function ToolLine({ name, icon, iconColor, colorful = false, hover = true }) {
   );
 }
 
-export default ToolLine;
+const mapStateToProps = (state) => ({
+  theme: state.theme.theme,
+});
+
+export default connect(mapStateToProps)(ToolLine);

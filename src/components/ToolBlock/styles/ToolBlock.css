@@ -6,10 +6,5 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background-color: var(--dark-01);
   border: 1px solid var(--dark-03);
-}
-
-.tool-block__name {
-  color: var(--medium-00);
 }

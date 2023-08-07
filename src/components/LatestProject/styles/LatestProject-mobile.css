@@ -34,14 +34,6 @@
     width: 100%;
     text-align: center;
     border: none;
-    background-color: var(--dark-03);
   }
 
-  .latest-project__details__link__text {
-    color: var(--medium-00);
-    background: none;
-    background-clip: unset;
-    -webkit-background-clip: unset;
-    -webkit-text-fill-color: unset;
-  }
 }

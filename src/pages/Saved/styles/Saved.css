@@ -6,7 +6,6 @@
 }
 
 .saved__content__slogan {
-  background-color: var(--dark-03--opc-00);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,14 +22,11 @@
 }
 
 .saved__content__slogan__icon {
-  color: var(--dark-06);
   font-size: 2em;
 }
 
 .saved__content__slogan__text {
-  color: var(--dark-05);
   font-size: 1em;
-  /* text-align: center; */
 }
 
 .saved__content__title-and-sort {
@@ -44,10 +40,6 @@
   font-weight: 400;
   text-transform: capitalize;
   font-size: 2em;
-  background: linear-gradient(169deg, var(--medium-02) 0%, transparent 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .saved__content__title-and-sort__button {
@@ -60,7 +52,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--medium-00);
   cursor: pointer;
 }
 

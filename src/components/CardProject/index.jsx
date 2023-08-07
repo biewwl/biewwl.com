@@ -2,9 +2,10 @@ import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
 import config from "../../config.json";
 import tools from "../../data/tools";
+import { connect } from "react-redux";
 import "./styles/CardProject.css";
 
-function CardProject({ projectData }) {
+function CardProject({ projectData, theme }) {
   const {
     name,
     images,
@@ -22,11 +23,11 @@ function CardProject({ projectData }) {
   const [projectCover] = images;
 
   return (
-    <section className="card-project">
+    <section className={`card-project bg-${theme}-01 bb-${theme}-03`}>
       <img src={projectCover} alt="" className="card-project__image" />
       <div className="card-project__details">
-        <h4 className="card-project__details__title">{name}</h4>
-        <p className="card-project__details__description">{description}</p>
+        <h4 className={`card-project__details__title c-${theme}-02`}>{name}</h4>
+        <p className={`card-project__details__description c-${theme}-05`}>{description}</p>
         <div className="card-project__details__tags-dev">
           {frontend && (
             <span className="card-project__details__tags-dev--tag frontend">
@@ -50,7 +51,7 @@ function CardProject({ projectData }) {
         <div className="card-project__details__links">
           <Link
             to={`${pathToProject}${name}`}
-            className="card-project__details__links__link-to-project"
+            className={`card-project__details__links__link-to-project bg-${theme}-02`}
           >
             More Details
             <svg
@@ -70,7 +71,7 @@ function CardProject({ projectData }) {
             <Link
               to={repository}
               target="_blank"
-              className="card-project__details__links__link"
+              className={`card-project__details__links__link bg-${theme}-02`}
             >
               <Icon icon={tools.github.icon} />
             </Link>
@@ -78,7 +79,7 @@ function CardProject({ projectData }) {
           {design && (
             <Link
               to={figma}
-              className="card-project__details__links__link"
+              className={`card-project__details__links__link bg-${theme}-02`}
               target="_blank"
             >
               <Icon icon={tools.figma.icon} />
@@ -90,4 +91,8 @@ function CardProject({ projectData }) {
   );
 }
 
-export default CardProject;
+const mapStateToProps = (state) => ({
+  theme: state.theme.theme,
+});
+
+export default connect(mapStateToProps)(CardProject);

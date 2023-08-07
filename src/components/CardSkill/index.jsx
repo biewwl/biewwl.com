@@ -14,7 +14,7 @@ function CardSkill({ icon, name, description, theme }) {
 }
 
 const mapStateToProps = (state) => ({
-  theme: state.theme,
+  theme: state.theme.theme,
 });
 
 export default connect(mapStateToProps)(CardSkill);
