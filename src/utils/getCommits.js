@@ -1,6 +1,9 @@
 export const getCommits = async (repo) => {
-  const response = await fetch(`https://api.github.com/repos/biewwl/biewwl.com/commits?owner=biewwl&repo=${repo}`)
+  const response = await fetch(
+    `https://api.github.com/repos/biewwl/${repo}/commits?owner=biewwl&repo=${repo}`
+  );
   const commits = await response.json();
+  if (response.status !== 200) return [];
   const mappedCommits = commits.map((commit) => {
     const {
       author: { avatar_url, login, url },
