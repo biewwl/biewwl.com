@@ -1,19 +1,7 @@
-import { Octokit } from "octokit";
-
-const octokit = new Octokit({
-  auth: "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",
-});
-
 export const getCommits = async (repo) => {
-  const commits = await octokit.request(`GET /repos/biewwl/${repo}/commits`, {
-    owner: "biewwl",
-    repo,
-    headers: {
-      "X-GitHub-Api-Version": "2022-11-28",
-    },
-  });
-  const commitsData = commits.data;
-  const mappedCommits = commitsData.map((commit) => {
+  const response = await fetch(`https://api.github.com/repos/biewwl/biewwl.com/commits?owner=biewwl&repo=${repo}`)
+  const commits = await response.json();
+  const mappedCommits = commits.map((commit) => {
     const {
       author: { avatar_url, login, url },
       commit: {
@@ -23,6 +11,6 @@ export const getCommits = async (repo) => {
     } = commit;
     return { avatar_url, nick: login, user_url: url, date, message };
   });
-  const lastFiveCommits = mappedCommits.splice(0, 10);
+  const lastFiveCommits = mappedCommits.splice(0, 5);
   return lastFiveCommits;
 };
