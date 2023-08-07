@@ -7,7 +7,7 @@ import IMAGE_SAVED from "./images/Saved.png";
 const { figma, html, javascript, react, css, git, github, node } = tools;
 
 const data = {
-  name: "biewwl",
+  name: "biewwl.com",
   date: "06/30/2023",
   frontend: "biewwl",
   backend: "",

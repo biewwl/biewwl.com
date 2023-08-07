@@ -8,7 +8,7 @@ function Header({ theme }) {
   return (
     <header className={`header bg-${theme}-00`}>
       <div className="header__logo__and__name">
-        <img src={logo} alt="logo" className={`header__logo__and__name__logo bg-${theme}-03--opc`} />
+        <img src={logo} alt="logo" className={`header__logo__and__name__logo bg-${theme}-01`} />
         <h1 className={`header__logo__and__name__name c-${theme}-03`}>
           biewwl<span className={`header__logo__and__name__name--js c-${theme}-05`}>.js</span>
         </h1>

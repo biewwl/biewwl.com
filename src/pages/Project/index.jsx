@@ -11,6 +11,7 @@ import "./styles/Project-mobile.css";
 import RateStars from "../../components/RateStars";
 import { useState } from "react";
 import { connect } from "react-redux";
+import Commits from "../../components/Commits";
 
 function Project({ theme }) {
   const { projectName } = useParams();
@@ -148,6 +149,7 @@ function Project({ theme }) {
         {othersTools && (
           <DevToolsSection title="Others Tools" icons={othersTools} />
         )}
+        <Commits />
       </main>
       <Footer />
     </div>

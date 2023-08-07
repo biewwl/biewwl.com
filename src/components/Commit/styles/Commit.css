@@ -1,0 +1,47 @@
+.commit {
+  border-radius: 1em;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 150px;
+}
+
+.commit.--feat {
+  background-color: #80002063;
+}
+
+.commit.--fix {
+  background-color: #00807563;
+}
+
+.commit.--styles,
+.commit.--style {
+  background-color: #20537c63;
+}
+
+.commit__header {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.commit__header__user-image {
+  height: 40px;
+  border-radius: 0.5em;
+}
+
+.commit__header__date-and-nick {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.commit__header__date-and-nick__nick {
+  font-size: 0.8em;
+  font-style: italic;
+}
+
+.commit__header__date-and-nick__date {
+  font-size: 0.6em;
+}

@@ -1,0 +1,23 @@
+.commits {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.commits__title {
+  font-weight: 300;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.commits__title__text {
+  margin-block-start: 5px;
+}
+
+.commits__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}

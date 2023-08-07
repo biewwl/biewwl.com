@@ -26,6 +26,8 @@ function AsideMenu({ theme, dispatch }) {
     dispatch(changeTheme(theme));
   };
 
+  const themeIcon = theme === "light" ? "☀️" : "🌙";
+
   return (
     <aside className="aside-menu">
       <input
@@ -52,20 +54,32 @@ function AsideMenu({ theme, dispatch }) {
             onClick={handleOpenMenu}
             className={`aside-menu__content__nav__icon c-${theme}-03`}
           />
-          <Link to={home} className={`aside-menu__content__nav__link c-${theme}-05`}>
+          <Link
+            to={home}
+            className={`aside-menu__content__nav__link c-${theme}-05`}
+          >
             {home_link_text}
           </Link>
-          <Link to={projects} className={`aside-menu__content__nav__link c-${theme}-05`}>
+          <Link
+            to={projects}
+            className={`aside-menu__content__nav__link c-${theme}-05`}
+          >
             {projects_link_text}
           </Link>
-          <Link to={saved} className={`aside-menu__content__nav__link c-${theme}-05`}>
+          <Link
+            to={saved}
+            className={`aside-menu__content__nav__link c-${theme}-05`}
+          >
             {saved_link_text} ({ratedCardsCount})
           </Link>
           <button
-            className={`aside-menu__content__nav__button c-${theme}-05`}
+            className={`aside-menu__content__nav__theme bg-${theme}-00 c-${theme}-05`}
             onClick={handleChangeTheme}
           >
-            Theme: {theme}
+            Mode:{" "}
+            <span className="aside-menu__content__nav__theme__icon">
+              {themeIcon}
+            </span>
           </button>
         </nav>
       </div>
