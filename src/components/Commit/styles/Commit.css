@@ -4,7 +4,16 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  min-width: 150px;
+  cursor: default;
+}
+
+.commit:not(.--last) {
+  opacity: 0.3;
+  transition: 0.5s;
+}
+
+.commit:not(.--last):hover {
+  opacity: 1;
 }
 
 .commit.--feat {
@@ -15,8 +24,7 @@
   background-color: #00807563;
 }
 
-.commit.--styles,
-.commit.--style {
+.commit.--styles {
   background-color: #20537c63;
 }
 
@@ -27,8 +35,8 @@
 }
 
 .commit__header__user-image {
-  height: 40px;
-  border-radius: 0.5em;
+  height: 20px;
+  border-radius: 50%;
 }
 
 .commit__header__date-and-nick {
@@ -38,10 +46,14 @@
 }
 
 .commit__header__date-and-nick__nick {
-  font-size: 0.8em;
+  font-size: 0.7em;
   font-style: italic;
 }
 
 .commit__header__date-and-nick__date {
   font-size: 0.6em;
+}
+
+.commit__detail__message {
+  font-size: 0.8em;
 }

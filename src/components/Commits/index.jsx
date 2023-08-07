@@ -31,7 +31,7 @@ function Commits({ theme }) {
       </h4>
       <section className="commits__cards">
         {lastCommits.map((commitData, i) => {
-          return <Commit key={i} commitData={commitData} />;
+          return <Commit key={i} commitData={commitData} index={i} />;
         })}
       </section>
     </section>

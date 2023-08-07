@@ -92,6 +92,7 @@ function Project({ theme }) {
             <Link
               to={figma}
               className={`project__main__links__link bg-${theme}-02`}
+              target="_blank"
             >
               <Icon
                 icon={tools.figma.icon}
@@ -108,6 +109,7 @@ function Project({ theme }) {
             <Link
               to={repository}
               className={`project__main__links__link bg-${theme}-02`}
+              target="_blank"
             >
               <Icon
                 icon={tools.github.icon}
@@ -140,13 +142,13 @@ function Project({ theme }) {
             <Icon icon="ep:arrow-up-bold" rotate={1} />
           </button>
         </div>
-        {frontendTools && (
+        {frontend && (
           <DevToolsSection title="Front End Tools" icons={frontendTools} />
         )}
-        {backendTools && (
+        {backend && (
           <DevToolsSection title="Back End Tools" icons={backendTools} />
         )}
-        {othersTools && (
+        {design && (
           <DevToolsSection title="Others Tools" icons={othersTools} />
         )}
         <Commits />
