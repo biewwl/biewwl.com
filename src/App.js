@@ -7,6 +7,7 @@ import { useCallback, useEffect } from "react";
 import Saved from "./pages/Saved";
 import "./App.css";
 import "./css/theme.css";
+import NotFound from "./pages/NotFound";
 
 function App() {
   const { home, projects, project, saved } = config.routes;
@@ -23,10 +24,11 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path={home} element={<Home />} />
-        <Route path={projects} element={<Projects />} />
-        <Route path={project} element={<Project />} />
-        <Route path={saved} element={<Saved />} />
+        <Route exact path={home} element={<Home />} />
+        <Route exact path={projects} element={<Projects />} />
+        <Route exact path={project} element={<Project />} />
+        <Route exact path={saved} element={<Saved />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );

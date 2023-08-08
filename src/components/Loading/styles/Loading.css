@@ -1,0 +1,29 @@
+@keyframes loading {
+  0% {
+    scale: 0.6;
+    transform: rotate(-360deg);
+  }
+  50% {
+    scale: 1;
+    transform: rotate(-360deg);
+  }
+  80% {
+    transform: rotate(0);
+  }
+  100% {
+    scale: 0.6;
+  }
+}
+
+.loading {
+  /* background-color: red; */
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading__logo {
+  height: 80px;
+  animation: loading 2s infinite;
+}

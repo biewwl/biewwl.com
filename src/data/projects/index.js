@@ -19,4 +19,22 @@ export const getProjectsData = (projectsList) =>
 
 export const lastProject = projects[0];
 
+export const mockProject = {
+  name: "",
+  date: "",
+  frontend: "",
+  backend: "",
+  design: "",
+  description: "",
+  tools: {
+    frontend: [],
+    backend: [],
+    others: [],
+  },
+  images: [],
+  repository: "",
+  figma: "",
+  tags: [],
+};
+
 export default projects;

@@ -6,7 +6,7 @@ const tools = {
   },
   css: {
     icon: "simple-icons:css3",
-    name: "Css",
+    name: "CSS",
     iconColor: "#1572B6",
   },
   javascript: {
