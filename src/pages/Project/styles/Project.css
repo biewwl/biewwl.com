@@ -77,10 +77,8 @@
 .project__main__carrousel__arrow {
   position: absolute;
   padding: 10px;
-  background-color: var(--dark-03--opc-00);
   border-radius: 0.5em;
   border: none;
-  color: var(--medium-01);
   font-size: 1.5em;
   cursor: pointer;
   transition: 0.5s;

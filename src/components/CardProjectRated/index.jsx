@@ -19,7 +19,7 @@ function CardProjectRated({ projectData, theme }) {
     <section className="card-project-rated">
       <img src={firstImage} alt="" className="card-project-rated__image" />
       <h4 className="card-project-rated__name">{name}</h4>
-      <div className={`card-project-rated__stars bg-${theme}-03--opc`}>
+      <div className={`card-project-rated__stars bg-${theme}-00--opc`}>
         <RateStars name={name} />
         <div className="card-project-rated__stars__actions">
           <Link

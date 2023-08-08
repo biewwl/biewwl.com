@@ -146,7 +146,7 @@ function Project({ theme }) {
           <div className="project__main__carrousel">
             <button
               onClick={handlePrevImage}
-              className="project__main__carrousel__arrow --prev"
+              className={`project__main__carrousel__arrow --prev bg-${theme}-03--opc c-${theme}-02`}
             >
               <Icon icon="ep:arrow-up-bold" rotate={3} />
             </button>
@@ -157,7 +157,7 @@ function Project({ theme }) {
             />
             <button
               onClick={handleNextImage}
-              className="project__main__carrousel__arrow --next"
+              className={`project__main__carrousel__arrow --next bg-${theme}-03--opc c-${theme}-02`}
             >
               <Icon icon="ep:arrow-up-bold" rotate={1} />
             </button>

@@ -34,6 +34,10 @@
   background-color: var(--dark-00);
 }
 
+.bg-dark-00--opc {
+  background-color: var(--dark-00--opc-00);
+}
+
 .bg-dark-01 {
   background-color: var(--dark-01);
 }
@@ -47,7 +51,7 @@
 }
 
 .bg-dark-03--opc {
-  background-color: var(--dark-00--opc-00);
+  background-color: var(--dark-03--opc-00);
 }
 
 .c-dark-00 {
@@ -91,6 +95,10 @@
   background-color: var(--light-00);
 }
 
+.bg-light-00--opc {
+  background-color: var(--light-03--opc-00);
+}
+
 .bg-light-01 {
   background-color: var(--light-01);
 }
@@ -104,7 +112,7 @@
 }
 
 .bg-light-03--opc {
-  background-color: var(--light-03--opc-00);
+  background-color: var(--light-00--opc-00);
 }
 
 .c-light-00 {
