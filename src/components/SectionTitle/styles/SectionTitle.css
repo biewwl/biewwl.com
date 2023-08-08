@@ -1,0 +1,14 @@
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-title__icon {
+  font-size: 1.3em;
+}
+
+.section-title__text {
+  margin-block-start: 5px;
+  font-weight: 500;
+}

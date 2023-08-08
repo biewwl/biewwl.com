@@ -1,14 +1,13 @@
 import ToolLine from "../ToolLine";
+import { connect } from "react-redux";
+import SectionTitle from "../SectionTitle/SectionTitle";
 import "./styles/DevToolsSection.css";
 import "./styles/DevToolsSection-mobile.css";
-import { connect } from "react-redux";
 
-function DevToolsSection({ title, icons, theme }) {
+function DevToolsSection({ title, icons, icon }) {
   return (
     <section className="dev-tools-section">
-      <h3 className={`dev-tools-section__title c-gradient-${theme}`}>
-        {title}
-      </h3>
+      <SectionTitle text={title} icon={icon} />
       <div className="dev-tools-section__icons">
         {icons.map(({ icon, name, iconColor }, i) => (
           <ToolLine

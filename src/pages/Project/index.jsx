@@ -72,6 +72,8 @@ function Project({ theme }) {
     fetchProjectData();
   }, [projectData, navigate, projectName]);
 
+  const haveTools = (tool) => tool.length > 0;
+
   return (
     <div className={`project bg-${theme}-00`}>
       <Header />
@@ -79,9 +81,7 @@ function Project({ theme }) {
         <Loading />
       ) : (
         <main className="project__main">
-          <h2 className={`project__main__project c-gradient-${theme}`}>
-            Project
-          </h2>
+          <h2 className={`project__main__project c-${theme}-05`}>Project</h2>
           <h1 className={`project__main__title c-gradient-${theme}`}>{name}</h1>
           <RateStars name={name} />
           <div className="project__main__tags-dev">
@@ -162,14 +162,26 @@ function Project({ theme }) {
               <Icon icon="ep:arrow-up-bold" rotate={1} />
             </button>
           </div>
-          {frontend && (
-            <DevToolsSection title="Front End Tools" icons={frontendTools} />
+          {haveTools(frontendTools) && (
+            <DevToolsSection
+              title="Front End Tools"
+              icons={frontendTools}
+              icon="gridicons:site"
+            />
           )}
-          {backend && (
-            <DevToolsSection title="Back End Tools" icons={backendTools} />
+          {haveTools(backendTools) && (
+            <DevToolsSection
+              title="Back End Tools"
+              icons={backendTools}
+              icon="ph:database"
+            />
           )}
-          {design && (
-            <DevToolsSection title="Others Tools" icons={othersTools} />
+          {haveTools(othersTools) && (
+            <DevToolsSection
+              title="Others Tools"
+              icons={othersTools}
+              icon="carbon:tool-box"
+            />
           )}
           <Commits />
         </main>
