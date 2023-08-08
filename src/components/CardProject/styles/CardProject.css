@@ -19,6 +19,9 @@
 .card-project__details__title {
   font-size: 1.4em;
   font-weight: 400;
+}
+
+.card-project__details__title::first-letter {
   text-transform: capitalize;
 }
 
