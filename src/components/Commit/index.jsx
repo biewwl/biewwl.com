@@ -42,7 +42,7 @@ function Commit({ commitData, theme, index }) {
           <div className="commit__details">
             <Icon
               icon={iconCommit[tagCommit()]}
-              className="commit__details__icon"
+              className={`commit__details__icon c-${theme}-02`}
             />
             <p className={`commit__details__message c-${theme}-02`}>
               {commitMessage}
