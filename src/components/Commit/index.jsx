@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import useTimer from "../../hooks/useTimer";
 import "./styles/Commit.css";
+import { Icon } from "@iconify/react";
 
 function Commit({ commitData, theme, index }) {
   const { avatar_url, date, nick, message } = commitData;
@@ -13,7 +14,15 @@ function Commit({ commitData, theme, index }) {
     return tag.toLowerCase();
   };
 
+  const commitMessage = message.split(":")[1];
+
   const classNameLast = index === 0 ? " --last" : "";
+
+  const iconCommit = {
+    styles: "fluent-mdl2:format-painter",
+    feat: "octicon:package-24",
+    fix: "tabler:tool",
+  };
 
   return (
     <section className={`commit --${tagCommit()}${classNameLast}`}>
@@ -24,22 +33,20 @@ function Commit({ commitData, theme, index }) {
               src={avatar_url}
               alt=""
               className="commit__header__user-image"
+              title={nick}
             />
-            <div className="commit__header__date-and-nick">
-              <span
-                className={`commit__header__date-and-nick__date c-${theme}-03`}
-              >
-                {currentTimer} {inPlural} ago
-              </span>
-              <span
-                className={`commit__header__date-and-nick__nick c-${theme}-03`}
-              >
-                @{nick}
-              </span>
-            </div>
+            <span className={`commit__header__date c-${theme}-03`}>
+              {currentTimer} {inPlural} ago
+            </span>
           </div>
           <div className="commit__details">
-            <p className={`commit__detail__message c-${theme}-02`}>{message}</p>
+            <Icon
+              icon={iconCommit[tagCommit()]}
+              className="commit__details__icon"
+            />
+            <p className={`commit__details__message c-${theme}-02`}>
+              {commitMessage}
+            </p>
           </div>
         </>
       )}

@@ -39,21 +39,32 @@
   border-radius: 50%;
 }
 
-.commit__header__date-and-nick {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.commit__header__date-and-nick__nick {
-  font-size: 0.7em;
-  font-style: italic;
-}
-
-.commit__header__date-and-nick__date {
+.commit__header__date {
   font-size: 0.6em;
 }
 
-.commit__detail__message {
+.commit__details {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.commit__details__message {
   font-size: 0.8em;
+  text-transform: lowercase;
+  margin-block-start: 3px;
+}
+
+.commit__details__message::first-letter {
+  text-transform: capitalize;
+}
+
+.commit__details__icon {
+  right: -10px;
+  top: -10px;
+  font-size: 0.8em;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
