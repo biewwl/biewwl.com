@@ -162,7 +162,7 @@ function Project({ theme }) {
             <DevToolsSection
               title="Tools"
               icons={projectTools}
-              icon="gridicons:site"
+              icon="carbon:tool-box"
             />
           )}
           <Commits />
