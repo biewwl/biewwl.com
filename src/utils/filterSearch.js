@@ -47,15 +47,11 @@ export const filterByTools = (currentResults, toolsName) => {
   return newProjects;
 };
 
-export const usedTools = () => {
-  const allProjects = projects;
+export const usedTools = (allProjects) => {
   const tools = [];
   allProjects.forEach((project) => {
-    const {
-      tools: { frontend, backend, others },
-    } = project;
-    const allTools = [...frontend, ...backend, ...others];
-    allTools.forEach((tool) => {
+    const { tools: projectTools } = project;
+    projectTools.forEach((tool) => {
       const existTool = tools.some((savedTool) => savedTool === tool);
       if (!existTool) tools.push(tool);
     });

@@ -29,7 +29,6 @@ function Projects({ theme }) {
     const filteredByWords = filterByWords(inputText, projectsList);
     const filteredByTools = filterByTools(filteredByWords, searchTools);
     setFilteredList(filteredByTools);
-    console.log(filterByTools);
     setQuerySearch(target.value);
   };
 
@@ -98,7 +97,7 @@ function Projects({ theme }) {
           {section_projects_title}
         </h3>
         <div className="projects__main__search-tags">
-          {usedTools().map(({ name, icon, iconColor }, i) => (
+          {usedTools(filteredList).map(({ name, icon, iconColor }, i) => (
             <div onClick={() => handleClickTool(name)} key={i}>
               <ToolLine
                 name={name}
