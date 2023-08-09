@@ -67,6 +67,7 @@
 
 .latest-project__details__tags {
   font-weight: 300;
+  text-transform: lowercase;
 }
 
 .latest-project__details__link {
