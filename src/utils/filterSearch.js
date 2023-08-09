@@ -50,11 +50,12 @@ export const filterByTools = (currentResults, toolsName) => {
 export const usedTools = (allProjects) => {
   const tools = [];
   allProjects.forEach((project) => {
-    const { tools: projectTools } = project;
-    projectTools.forEach((tool) => {
+    const { tools } = project;
+    tools.forEach((tool) => {
       const existTool = tools.some((savedTool) => savedTool === tool);
       if (!existTool) tools.push(tool);
     });
   });
+  console.log(tools);
   return tools;
 };
