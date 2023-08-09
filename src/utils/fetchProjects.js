@@ -5,7 +5,7 @@ export const fetchProject = async (projectName) => {
     `https://api.github.com/repos/biewwl/${projectName}`,
     {
       headers: {
-        "User-Agent": "biewwl",
+        "User-Agent": projectName,
       },
     }
   );
@@ -15,7 +15,7 @@ export const fetchProject = async (projectName) => {
     `https://raw.githubusercontent.com/biewwl/${projectName}/master/project-info.json`,
     {
       headers: {
-        "User-Agent": "biewwl",
+        "User-Agent": projectName,
       },
     }
   );
@@ -43,7 +43,7 @@ const filterProjects = async (projects) => {
         `https://raw.githubusercontent.com/biewwl/${name}/master/project-info.json`,
         {
           headers: {
-            "User-Agent": "biewwl",
+            "User-Agent": name,
           },
         }
       );
@@ -57,11 +57,7 @@ const filterProjects = async (projects) => {
 };
 
 export const fetchProjects = async () => {
-  const response = await fetch("https://api.github.com/users/biewwl/repos", {
-    headers: {
-      "User-Agent": "biewwl",
-    },
-  });
+  const response = await fetch("https://api.github.com/users/biewwl/repos");
   const responseJSON = await response.json();
   const filteredProjects = await filterProjects(responseJSON);
   const mappedProjects = await Promise.all(
