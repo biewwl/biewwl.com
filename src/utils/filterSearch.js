@@ -14,15 +14,11 @@ export const filterByWords = (text, projectsArray) => {
   let newProjects = projectsArray;
   searchWords.forEach((word) => {
     const currentFilter = newProjects.filter((projectData) => {
-      const {
-        name,
-        tools: { frontend, backend, others },
-      } = projectData;
+      const { name, tools } = projectData;
       const wordLower = word.toLowerCase();
       const currentProjectName = name.toLowerCase();
-      const allTools = [...frontend, ...backend, ...others];
       const nameIncludes = currentProjectName.includes(wordLower);
-      const toolsIncludes = allTools.some((tool) => {
+      const toolsIncludes = tools.some((tool) => {
         const { name: toolName } = tool;
         const toolNameLower = toolName.toLowerCase();
         return toolNameLower.includes(wordLower);
@@ -38,11 +34,8 @@ export const filterByTools = (currentResults, toolsName) => {
   let newProjects = currentResults;
   toolsName.forEach((word) => {
     const currentFilter = newProjects.filter((projectData) => {
-      const {
-        tools: { frontend, backend, others },
-      } = projectData;
-      const allTools = [...frontend, ...backend, ...others];
-      const toolsIncludes = allTools.some((tool) => {
+      const { tools } = projectData;
+      const toolsIncludes = tools.some((tool) => {
         const { name: toolName } = tool;
         const toolNameLower = toolName.toLowerCase();
         return toolNameLower === word.toLowerCase();

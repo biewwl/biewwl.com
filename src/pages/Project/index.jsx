@@ -1,7 +1,7 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import { getProjectData, mockProject } from "../../data/projects";
+import { mockProject } from "../../data/projects";
 import { Icon } from "@iconify/react";
 import config from "../../config.json";
 import tools from "../../data/tools";
@@ -10,10 +10,10 @@ import RateStars from "../../components/RateStars";
 import { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import Commits from "../../components/Commits";
+import Loading from "../../components/Loading";
+import { fetchProject } from "../../utils/fetchProjects";
 import "./styles/Project.css";
 import "./styles/Project-mobile.css";
-import Loading from "../../components/Loading";
-import { fetchProjects } from "../../utils/fetchProjects";
 
 function Project({ theme }) {
   const { projectName } = useParams();
@@ -32,11 +32,7 @@ function Project({ theme }) {
     repository,
     figma,
     images,
-    tools: {
-      frontend: frontendTools,
-      backend: backendTools,
-      others: othersTools,
-    },
+    tools: projectTools,
   } = projectData ?? {};
 
   const coverImage = images[imageIndex];
@@ -62,29 +58,17 @@ function Project({ theme }) {
   };
 
   useEffect(() => {
-    const fetchProjectData = () => {
-      const data = getProjectData(projectName);
-      if (!data) navigate("/not-found");
-      setProjectData(data);
-      setInterval(() => {
-        setLoading(false);
-      }, 500);
-    };
+    const fetchProjectData = async () => {
+      try {
+        const projectData = await fetchProject(projectName);
+        setProjectData(projectData);
+        setLoading(false)
+      } catch (error) {
+        navigate("/404")
+      }
+    }
     fetchProjectData();
-  }, [projectData, navigate, projectName]);
-
-  const haveTools = (tool) => tool.length > 0;
-
-  // const test = async () => {
-  //   const response = await fetch(
-  //     `https://raw.githubusercontent.com/biewwl/${projectName}/master/project-images.json`
-  //   );
-  //   const responseJSON = await response.json()
-  //   console.log(responseJSON);
-  // };
-  // test();
-
-  fetchProjects();
+  }, [projectName, navigate])
 
   return (
     <div className={`project bg-${theme}-00`}>
@@ -174,25 +158,11 @@ function Project({ theme }) {
               <Icon icon="ep:arrow-up-bold" rotate={1} />
             </button>
           </div>
-          {haveTools(frontendTools) && (
+          {projectTools && (
             <DevToolsSection
-              title="Front End Tools"
-              icons={frontendTools}
+              title="Tools"
+              icons={projectTools}
               icon="gridicons:site"
-            />
-          )}
-          {haveTools(backendTools) && (
-            <DevToolsSection
-              title="Back End Tools"
-              icons={backendTools}
-              icon="ph:database"
-            />
-          )}
-          {haveTools(othersTools) && (
-            <DevToolsSection
-              title="Others Tools"
-              icons={othersTools}
-              icon="carbon:tool-box"
             />
           )}
           <Commits />

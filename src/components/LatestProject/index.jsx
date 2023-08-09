@@ -1,13 +1,17 @@
-import { lastProject } from "../../data/projects";
+// import { lastProject } from "../../data/projects";
 import { Link } from "react-router-dom";
 import config from "../../config.json";
-import "./styles/LatestProject.css";
-import "./styles/LatestProject-mobile.css";
 import RateStars from "../RateStars";
 import { connect } from "react-redux";
+import { useEffect, useState } from "react";
+import { fetchProjects } from "../../utils/fetchProjects";
+import { mockProject } from "../../data/projects";
+import "./styles/LatestProject.css";
+import "./styles/LatestProject-mobile.css";
 
 function LatestProject({ theme }) {
-  const { images, name, description, tags, date } = lastProject;
+  const [lastProject, setLastProject] = useState(mockProject);
+  const { images, name, description, tools, date } = lastProject;
   const { project } = config.routes;
   const [pathToProject] = project.split(":");
 
@@ -35,6 +39,14 @@ function LatestProject({ theme }) {
     return `${day}, ${monthNames[month]} ${year}`;
   };
 
+  useEffect(() => {
+    const fetchLastProject = async () => {
+      const [lastProjectData] = await fetchProjects();
+      setLastProject(lastProjectData);
+    };
+    fetchLastProject();
+  }, []);
+
   return (
     <section className={`latest-project bg-${theme}-01`}>
       <section className="latest-project__images">
@@ -56,8 +68,8 @@ function LatestProject({ theme }) {
           {description}
         </p>
         <p className="latest-project__details__tags">
-          {tags.map((tag, i) => (
-            <span key={i} className={`c-${theme}-05`}>{`#${tag} `}</span>
+          {tools.map((tag, i) => (
+            <span key={i} className={`c-${theme}-05`}>{`#${tag.name} `}</span>
           ))}
         </p>
         <p

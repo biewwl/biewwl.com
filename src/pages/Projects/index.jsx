@@ -5,30 +5,31 @@ import config from "../../config.json";
 import Footer from "../../components/Footer";
 import CardProject from "../../components/CardProject";
 import ToolLine from "../../components/ToolLine";
-import projects from "../../data/projects";
 import {
   filterByTools,
   filterByWords,
   usedTools,
 } from "../../utils/filterSearch";
 import { connect } from "react-redux";
+import { fetchProjects } from "../../utils/fetchProjects";
 import "./styles/Projects.css";
 import "./styles/Projects-mobile.css";
-import { fetchProjects } from "../../utils/fetchProjects";
 
 function Projects({ theme }) {
   const { slogan, placeholder_search_text, section_projects_title } =
     config.pages.projects;
 
   const [querySearch, setQuerySearch] = useState("");
-  const [projectsList, setProjectsList] = useState(projects);
+  const [projectsList, setProjectsList] = useState([]);
+  const [filteredList, setFilteredList] = useState([]);
   const [searchTools, setSearchTools] = useState([]);
 
   const handleChangeQuery = ({ target }) => {
     const inputText = target.value.toLowerCase();
-    const filteredByWords = filterByWords(inputText, projects);
+    const filteredByWords = filterByWords(inputText, projectsList);
     const filteredByTools = filterByTools(filteredByWords, searchTools);
-    setProjectsList(filteredByTools);
+    setFilteredList(filteredByTools);
+    console.log(filterByTools);
     setQuerySearch(target.value);
   };
 
@@ -48,20 +49,19 @@ function Projects({ theme }) {
       currentTools = newSearchTools;
     }
     setSearchTools(currentTools);
-    const filteredByWords = filterByWords(querySearch, projects);
+    const filteredByWords = filterByWords(querySearch, projectsList);
     const filteredByTools = filterByTools(filteredByWords, currentTools);
-    setProjectsList(filteredByTools);
+    setFilteredList(filteredByTools);
   };
 
-  // fetchProjects()
-
-  // useEffect(() => {
-  //   const getProjects = async () => {
-  //     const projects = await fetchProjects();
-  //     setProjectsList(projects);
-  //   };
-  //   getProjects();
-  // }, []);
+  useEffect(() => {
+    const getProjects = async () => {
+      const projects = await fetchProjects();
+      setProjectsList(projects);
+      setFilteredList(projects);
+    };
+    getProjects();
+  }, []);
 
   return (
     <div className={`projects bg-${theme}-00`}>
@@ -111,7 +111,7 @@ function Projects({ theme }) {
           ))}
         </div>
         <section className="projects__main__cards">
-          {projectsList.map((projectData, i) => (
+          {filteredList.map((projectData, i) => (
             <CardProject projectData={projectData} key={i} />
           ))}
         </section>

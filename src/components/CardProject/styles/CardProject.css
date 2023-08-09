@@ -7,6 +7,8 @@
 
 .card-project__image {
   width: 100%;
+  height: 173.61px;
+  object-fit: cover;
 }
 
 .card-project__details {

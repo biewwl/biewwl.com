@@ -26,11 +26,7 @@ export const mockProject = {
   backend: "",
   design: "",
   description: "",
-  tools: {
-    frontend: [],
-    backend: [],
-    others: [],
-  },
+  tools: [],
   images: [],
   repository: "",
   figma: "",
