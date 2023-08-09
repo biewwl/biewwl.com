@@ -13,6 +13,7 @@ import Commits from "../../components/Commits";
 import "./styles/Project.css";
 import "./styles/Project-mobile.css";
 import Loading from "../../components/Loading";
+import { fetchProjects } from "../../utils/fetchProjects";
 
 function Project({ theme }) {
   const { projectName } = useParams();
@@ -73,6 +74,17 @@ function Project({ theme }) {
   }, [projectData, navigate, projectName]);
 
   const haveTools = (tool) => tool.length > 0;
+
+  // const test = async () => {
+  //   const response = await fetch(
+  //     `https://raw.githubusercontent.com/biewwl/${projectName}/master/project-images.json`
+  //   );
+  //   const responseJSON = await response.json()
+  //   console.log(responseJSON);
+  // };
+  // test();
+
+  fetchProjects();
 
   return (
     <div className={`project bg-${theme}-00`}>

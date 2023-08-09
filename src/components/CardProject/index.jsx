@@ -10,11 +10,11 @@ function CardProject({ projectData, theme }) {
     name,
     images,
     description,
-    frontend,
-    backend,
-    design,
     repository,
     figma,
+    frontend,
+    backend,
+    design
   } = projectData;
 
   const { project } = config.routes;
@@ -67,7 +67,7 @@ function CardProject({ projectData, theme }) {
               />
             </svg>
           </Link>
-          {(frontend || backend) && (
+          {repository && (
             <Link
               to={repository}
               target="_blank"

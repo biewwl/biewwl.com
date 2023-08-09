@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "../../components/Header";
 import config from "../../config.json";
 import Footer from "../../components/Footer";
@@ -14,6 +14,7 @@ import {
 import { connect } from "react-redux";
 import "./styles/Projects.css";
 import "./styles/Projects-mobile.css";
+import { fetchProjects } from "../../utils/fetchProjects";
 
 function Projects({ theme }) {
   const { slogan, placeholder_search_text, section_projects_title } =
@@ -52,6 +53,16 @@ function Projects({ theme }) {
     setProjectsList(filteredByTools);
   };
 
+  // fetchProjects()
+
+  // useEffect(() => {
+  //   const getProjects = async () => {
+  //     const projects = await fetchProjects();
+  //     setProjectsList(projects);
+  //   };
+  //   getProjects();
+  // }, []);
+
   return (
     <div className={`projects bg-${theme}-00`}>
       <Header />
@@ -61,7 +72,9 @@ function Projects({ theme }) {
             icon="iconoir:design-nib"
             className={`projects__main__icon c-${theme}-05`}
           />
-          <h1 className={`projects__main__slogan c-gradient-${theme}`}>{slogan}</h1>
+          <h1 className={`projects__main__slogan c-gradient-${theme}`}>
+            {slogan}
+          </h1>
           <label
             htmlFor="projects__main__input__label__search"
             className="projects__main__input__label"

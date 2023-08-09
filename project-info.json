@@ -1,0 +1,12 @@
+{
+  "frontend": true,
+  "backend": false,
+  "design": true,
+  "figma": "https://www.figma.com/file/AnnaSGxziIvdDRu41toAWs/Novo-Portf%C3%B3lio?type=design&node-id=21%3A36&mode=design&t=zlw4CM76EbJVvtfN-1",
+  "images": [
+    "https://raw.githubusercontent.com/biewwl/biewwl.com/master/src/project-images/Home.png",
+    "https://raw.githubusercontent.com/biewwl/biewwl.com/master/src/project-images/Project.png",
+    "https://raw.githubusercontent.com/biewwl/biewwl.com/master/src/project-images/Projects.png",
+    "https://raw.githubusercontent.com/biewwl/biewwl.com/master/src/project-images/Saved.png"
+  ]
+}
