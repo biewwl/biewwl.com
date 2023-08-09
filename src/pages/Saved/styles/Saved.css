@@ -1,3 +1,10 @@
+.saved {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .saved__content {
   display: flex;
   flex-direction: column;

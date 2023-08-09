@@ -1,5 +1,3 @@
-import projects from "../data/projects";
-
 export const splitWords = (text) => {
   let currentText = text;
   const textWords = currentText.split(" ");
