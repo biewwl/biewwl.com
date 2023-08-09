@@ -2,12 +2,22 @@ import tools from "../data/tools";
 
 export const fetchProject = async (projectName) => {
   const projectResponse = await fetch(
-    `https://api.github.com/repos/biewwl/${projectName}`
+    `https://api.github.com/repos/biewwl/${projectName}`,
+    {
+      headers: {
+        "User-Agent": "biewwl",
+      },
+    }
   );
   const project = await projectResponse.json();
   const { name, description, updated_at, url, topics } = project;
   const projectInfo = await fetch(
-    `https://raw.githubusercontent.com/biewwl/${projectName}/master/project-info.json`
+    `https://raw.githubusercontent.com/biewwl/${projectName}/master/project-info.json`,
+    {
+      headers: {
+        "User-Agent": "biewwl",
+      },
+    }
   );
   const projectInfoJSON = await projectInfo.json();
   const { images, frontend, backend, design } = projectInfoJSON;
@@ -30,7 +40,12 @@ const filterProjects = async (projects) => {
     await projects.map(async (project) => {
       const { name } = project;
       const projectExists = await fetch(
-        `https://raw.githubusercontent.com/biewwl/${name}/master/project-info.json`
+        `https://raw.githubusercontent.com/biewwl/${name}/master/project-info.json`,
+        {
+          headers: {
+            "User-Agent": "biewwl",
+          },
+        }
       );
       console.clear();
       if (projectExists.ok) return project;
@@ -42,7 +57,11 @@ const filterProjects = async (projects) => {
 };
 
 export const fetchProjects = async () => {
-  const response = await fetch("https://api.github.com/users/biewwl/repos");
+  const response = await fetch("https://api.github.com/users/biewwl/repos", {
+    headers: {
+      "User-Agent": "biewwl",
+    },
+  });
   const responseJSON = await response.json();
   const filteredProjects = await filterProjects(responseJSON);
   const mappedProjects = await Promise.all(
