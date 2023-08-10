@@ -31,6 +31,9 @@
       "home_link_text": "Home",
       "projects_link_text": "Projects",
       "saved_link_text": "Rated Projects"
+    },
+    "loading": {
+      "loading_message": "This delay could be a network issue."
     }
   },
   "localStorage": {

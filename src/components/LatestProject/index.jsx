@@ -88,9 +88,9 @@ function LatestProject({ theme }) {
                 ))}
               </p>
               <p
-                className={`latest-project__details__release  c-${theme}-05 c-${theme}-01`}
+                className={`latest-project__details__update  c-${theme}-05 c-${theme}-01`}
               >
-                Released: {releaseDate()}
+                Updated: {releaseDate()}
               </p>
               <RateStars name={name} />
               <Link

@@ -22,6 +22,7 @@ function Commit({ commitData, theme, index }) {
     styles: "fluent-mdl2:format-painter",
     feat: "octicon:package-24",
     fix: "tabler:tool",
+    refactor: "circum:star"
   };
 
   return (

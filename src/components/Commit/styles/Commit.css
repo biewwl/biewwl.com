@@ -28,6 +28,10 @@
   background-color: #20537c63;
 }
 
+.commit.--refactor {
+  background-color: #7c762063;
+}
+
 .commit__header {
   display: flex;
   gap: 8px;
