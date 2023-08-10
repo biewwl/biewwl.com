@@ -84,16 +84,16 @@ const tools = {
     name: "Express",
     iconColor: "#8a8a8a",
   },
-  postman: {
-    icon: "simple-icons:postman",
-    name: "Postman",
-    iconColor: "#FF6C37",
-  },
-  insomnia: {
-    icon: "simple-icons:insomnia",
-    name: "Insomnia",
-    iconColor: "#4000BF",
-  },
+  // postman: {
+  //   icon: "simple-icons:postman",
+  //   name: "Postman",
+  //   iconColor: "#FF6C37",
+  // },
+  // insomnia: {
+  //   icon: "simple-icons:insomnia",
+  //   name: "Insomnia",
+  //   iconColor: "#4000BF",
+  // },
   tailwind: {
     icon: "simple-icons:tailwindcss",
     name: "Tailwind",

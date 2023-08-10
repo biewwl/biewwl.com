@@ -62,7 +62,7 @@ function Project({ theme }) {
       try {
         const projectData = await fetchProject(projectName);
         setProjectData(projectData);
-        setLoading(false)
+        setLoading(false);
       } catch (error) {
         navigate("/404")
       }

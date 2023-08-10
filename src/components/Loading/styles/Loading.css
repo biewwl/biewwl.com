@@ -15,15 +15,29 @@
   }
 }
 
+@keyframes messageOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .loading {
-  /* background-color: red; */
   min-height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .loading__logo {
   height: 80px;
   animation: loading 2s infinite;
+}
+
+.loading__message {
+  animation: messageOpacity 0.5s;
 }
