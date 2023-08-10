@@ -14,6 +14,7 @@ import { connect } from "react-redux";
 import { fetchProjects } from "../../utils/fetchProjects";
 import "./styles/Projects.css";
 import "./styles/Projects-mobile.css";
+import Loading from "../../components/Loading";
 
 function Projects({ theme }) {
   const { slogan, placeholder_search_text, section_projects_title } =
@@ -23,6 +24,7 @@ function Projects({ theme }) {
   const [projectsList, setProjectsList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
   const [searchTools, setSearchTools] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const handleChangeQuery = ({ target }) => {
     const inputText = target.value.toLowerCase();
@@ -58,6 +60,7 @@ function Projects({ theme }) {
       const projects = await fetchProjects();
       setProjectsList(projects);
       setFilteredList(projects);
+      setLoading(false);
     };
     getProjects();
   }, []);
@@ -96,24 +99,30 @@ function Projects({ theme }) {
         <h3 className={`projects__main__section-title c-gradient-${theme}`}>
           {section_projects_title}
         </h3>
-        <div className="projects__main__search-tags">
-          {usedTools(filteredList).map(({ name, icon, iconColor }, i) => (
-            <div onClick={() => handleClickTool(name)} key={i}>
-              <ToolLine
-                name={name}
-                icon={icon}
-                iconColor={iconColor}
-                colorful={selectedTool(name)}
-                hover={false}
-              />
+        {loading ? (
+          <Loading />
+        ) : (
+          <>
+            <div className="projects__main__search-tags">
+              {usedTools(filteredList).map(({ name, icon, iconColor }, i) => (
+                <div onClick={() => handleClickTool(name)} key={i}>
+                  <ToolLine
+                    name={name}
+                    icon={icon}
+                    iconColor={iconColor}
+                    colorful={selectedTool(name)}
+                    hover={false}
+                  />
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-        <section className="projects__main__cards">
-          {filteredList.map((projectData, i) => (
-            <CardProject projectData={projectData} key={i} />
-          ))}
-        </section>
+            <section className="projects__main__cards">
+              {filteredList.map((projectData, i) => (
+                <CardProject projectData={projectData} key={i} />
+              ))}
+            </section>
+          </>
+        )}
       </main>
       <Footer />
     </div>
