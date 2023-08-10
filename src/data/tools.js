@@ -119,6 +119,11 @@ const tools = {
     name: "Figma",
     iconColor: "#F24E1E",
   },
+  axios: {
+    icon: "simple-icons:axios",
+    name: "Axios",
+    iconColor: "#5A29E4",
+  },
 };
 
 export const toolsArray = Object.values(tools);

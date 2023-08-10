@@ -1,4 +1,4 @@
-export const getCommits = async (repo) => {
+export const fetchCommits = async (repo) => {
   const response = await fetch(
     `https://api.github.com/repos/biewwl/${repo}/commits?owner=biewwl&repo=${repo}`
   );

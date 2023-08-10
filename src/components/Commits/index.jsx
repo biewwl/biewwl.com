@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getCommits } from "../../utils/getCommits";
+import { fetchCommits } from "../../utils/fetchCommits";
 import { useParams } from "react-router-dom";
 import Commit from "../Commit";
 import { connect } from "react-redux";
@@ -12,7 +12,7 @@ function Commits({ theme }) {
 
   useEffect(() => {
     const setCommits = async () => {
-      const commits = await getCommits(projectName);
+      const commits = await fetchCommits(projectName);
       setLastCommits(commits);
     };
     setCommits();

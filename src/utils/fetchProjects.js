@@ -1,25 +1,16 @@
 import tools from "../data/tools";
+import axios from "axios";
 
 export const fetchProject = async (projectName) => {
-  const projectResponse = await fetch(
-    `https://api.github.com/repos/biewwl/${projectName}`,
-    {
-      headers: {
-        "User-Agent": projectName,
-      },
-    }
+  const projectResponse = await axios.get(
+    `https://api.github.com/repos/biewwl/${projectName}`
   );
-  const project = await projectResponse.json();
+  const project = await projectResponse.data;
   const { name, description, updated_at, url, topics } = project;
-  const projectInfo = await fetch(
-    `https://raw.githubusercontent.com/biewwl/${projectName}/master/project-info.json`,
-    {
-      headers: {
-        "User-Agent": projectName,
-      },
-    }
+  const projectInfo = await axios.get(
+    `https://raw.githubusercontent.com/biewwl/${projectName}/master/project-info.json`
   );
-  const projectInfoJSON = await projectInfo.json();
+  const projectInfoJSON = await projectInfo.data;
   const { images, frontend, backend, design } = projectInfoJSON;
   const toolsMapped = topics.map((toolName) => tools[toolName]);
   return {
@@ -38,27 +29,25 @@ export const fetchProject = async (projectName) => {
 const filterProjects = async (projects) => {
   const onlyProjects = await Promise.all(
     await projects.map(async (project) => {
-      const { name } = project;
-      const projectExists = await fetch(
-        `https://raw.githubusercontent.com/biewwl/${name}/master/project-info.json`,
-        {
-          headers: {
-            "User-Agent": name,
-          },
-        }
-      );
-      console.clear();
-      if (projectExists.ok) return project;
-      return null;
+      try {
+        const { name } = project;
+        const projectExists = await axios.get(
+          `https://raw.githubusercontent.com/biewwl/${name}/master/project-info.json`
+        );
+        if (projectExists.status === 200) return project;
+      } catch (error) {
+        return null;
+      }
     })
   );
+  console.clear();
   const filteredProjects = onlyProjects.filter((project) => project);
   return filteredProjects;
 };
 
 export const fetchProjects = async () => {
-  const response = await fetch("https://api.github.com/users/biewwl/repos");
-  const responseJSON = await response.json();
+  const response = await axios.get("https://api.github.com/users/biewwl/repos");
+  const responseJSON = await response.data;
   const filteredProjects = await filterProjects(responseJSON);
   const mappedProjects = await Promise.all(
     filteredProjects.map(async (project) => {
