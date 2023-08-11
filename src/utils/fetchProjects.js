@@ -6,23 +6,24 @@ export const fetchProject = async (projectName) => {
     `https://api.github.com/repos/biewwl/${projectName}`
   );
   const project = await projectResponse.data;
-  const { name, description, updated_at, url, topics } = project;
+  const { name, description, updated_at, html_url, topics } = project;
   const projectInfo = await axios.get(
     `https://raw.githubusercontent.com/biewwl/${projectName}/master/project-info.json`
   );
   const projectInfoData = await projectInfo.data;
-  const { images, frontend, backend, design } = projectInfoData;
+  const { images, frontend, backend, design, figma } = projectInfoData;
   const toolsMapped = topics.map((toolName) => tools[toolName]);
   return {
     name,
     description,
     date: updated_at,
-    repository: url,
+    repository: html_url,
     tools: toolsMapped,
     images,
     frontend,
     backend,
     design,
+    figma
   };
 };
 
