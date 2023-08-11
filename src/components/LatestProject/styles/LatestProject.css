@@ -48,9 +48,12 @@
 }
 
 .latest-project__details__name {
-  text-transform: capitalize;
   font-weight: 200;
   font-size: 1.8em;
+}
+
+.latest-project__details__name::first-letter {
+  text-transform: capitalize;
 }
 
 .latest-project__details__name--tag {

@@ -5,9 +5,9 @@ import config from "./config.json";
 import Project from "./pages/Project";
 import { useCallback, useEffect } from "react";
 import Saved from "./pages/Saved";
+import NotFound from "./pages/NotFound";
 import "./App.css";
 import "./css/theme.css";
-import NotFound from "./pages/NotFound";
 
 function App() {
   const { home, projects, project, saved } = config.routes;
