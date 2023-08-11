@@ -33,14 +33,23 @@
 .home__presentation__discovery-btn {
   border-width: 1px;
   border-style: solid;
-  border-image: linear-gradient(to bottom, var(--medium-00), var(--medium-00--opc-00)) 1;
+  border-image: linear-gradient(
+      to bottom,
+      var(--medium-00),
+      var(--medium-00--opc-00)
+    )
+    1;
   padding: 10px 40px;
   background: none;
   text-decoration: none;
 }
 
 .home__presentation__discovery-btn__text {
-  background: linear-gradient(180deg, var(--medium-00) 0%, var(--medium-00--opc-00) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--medium-00) 0%,
+    var(--medium-00--opc-00) 100%
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
