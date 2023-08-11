@@ -71,7 +71,7 @@
 }
 
 .c-gradient-dark {
-  background: linear-gradient(180deg, var(--medium-01) 0%, transparent 100%);
+  background: linear-gradient(180deg, var(--medium-01) 0%, var(--dark-02) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

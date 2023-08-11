@@ -12,6 +12,7 @@ import { connect } from "react-redux";
 import Commits from "../../components/Commits";
 import Loading from "../../components/Loading";
 import { fetchProject } from "../../utils/fetchProjects";
+import DevTags from "../../components/DevTags";
 import "./styles/Project.css";
 import "./styles/Project-mobile.css";
 
@@ -37,7 +38,13 @@ function Project({ theme }) {
 
   const coverImage = images[imageIndex];
 
-  const { figma_link_text, repository_link_text } = config.pages.project;
+  const {
+    figma_link_text,
+    repository_link_text,
+    text_above_project_title,
+    section_tools_icon,
+    section_tools_text,
+  } = config.pages.project;
 
   const handleNextImage = () => {
     const lastImageIndex = images.length - 1;
@@ -64,11 +71,11 @@ function Project({ theme }) {
         setProjectData(projectData);
         setLoading(false);
       } catch (error) {
-        navigate("/404")
+        navigate("/404");
       }
-    }
+    };
     fetchProjectData();
-  }, [projectName, navigate])
+  }, [projectName, navigate]);
 
   return (
     <div className={`project bg-${theme}-00`}>
@@ -77,29 +84,12 @@ function Project({ theme }) {
         <Loading />
       ) : (
         <main className="project__main">
-          <h2 className={`project__main__project c-${theme}-05`}>Project</h2>
-          <h1 className={`project__main__title c-gradient-${theme}`}>{name}</h1>
+          <h2 className={`project__main__project c-${theme}-05`}>
+            {text_above_project_title}
+          </h2>
+          <h1 className={`project__main__title c-${theme}-02`}>{name}</h1>
           <RateStars name={name} />
-          <div className="project__main__tags-dev">
-            {frontend && (
-              <span className="project__main__tags-dev--tag frontend">
-                <Icon icon="gridicons:site" />
-                <span>FrontEnd</span>
-              </span>
-            )}
-            {backend && (
-              <span className="project__main__tags-dev--tag backend">
-                <Icon icon="ph:database" />
-                <span>BackEnd</span>
-              </span>
-            )}
-            {design && (
-              <span className="project__main__tags-dev--tag design">
-                <Icon icon="teenyicons:figma-outline" />
-                <span>UI UX</span>
-              </span>
-            )}
-          </div>
+          <DevTags frontend={frontend} backend={backend} design={design} />
           <p className={`project__main__description c-${theme}-02`}>
             {description}
           </p>
@@ -160,9 +150,9 @@ function Project({ theme }) {
           </div>
           {projectTools && (
             <DevToolsSection
-              title="Tools"
+              title={section_tools_text}
               icons={projectTools}
-              icon="carbon:tool-box"
+              icon={section_tools_icon}
             />
           )}
           <Commits />

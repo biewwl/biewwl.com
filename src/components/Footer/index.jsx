@@ -1,50 +1,38 @@
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import config from "../../config.json";
 import "./styles/Footer.css";
 import "./styles/Footer-mobile.css";
-import { connect } from "react-redux";
 
 function Footer({ theme }) {
+  const { section_links_title, section_contact_title, links, contacts } =
+    config.components.footer;
+
   return (
     <footer className={`footer bg-${theme}-01`}>
       <section className="footer__links">
-        <h3 className={`footer__links__title c-${theme}-00`}>Links</h3>
-        <Link
-          to="https://instagram.com/biewwl.js"
-          target="_blank"
-          className={`footer__links__link c-${theme}-05`}
-        >
-          Instagram
-        </Link>
-        <Link
-          to="https://github.com/biewwl"
-          target="_blank"
-          className={`footer__links__link c-${theme}-05`}
-        >
-          GitHub
-        </Link>
-        <Link
-          to="https://www.figma.com/@biewwl"
-          target="_blank"
-          className={`footer__links__link c-${theme}-05`}
-        >
-          Figma
-        </Link>
-        <Link
-          to="https://www.linkedin.com/in/biewwl/"
-          target="_blank"
-          className={`footer__links__link c-${theme}-05`}
-        >
-          Linkedin
-        </Link>
+        <h3 className={`footer__links__title c-${theme}-00`}>
+          {section_links_title}
+        </h3>
+        {links.map(({ name, link }) => (
+          <Link
+            to={link}
+            target="_blank"
+            className={`footer__links__link c-${theme}-05`}
+          >
+            {name}
+          </Link>
+        ))}
       </section>
       <section className="footer__contact">
-        <h3 className={`footer__contact__title c-${theme}-00`}>Contact</h3>
-        <span className={`footer__contact__item c-${theme}-05`}>
-          biewwl.js@gmail.com
-        </span>
-        <span className={`footer__contact__item c-${theme}-05`}>
-          +55 (98) 92000 7200
-        </span>
+        <h3 className={`footer__contact__title c-${theme}-00`}>
+          {section_contact_title}
+        </h3>
+        {contacts.map((contact) => (
+          <span className={`footer__contact__item c-${theme}-05`}>
+            {contact}
+          </span>
+        ))}
       </section>
     </footer>
   );

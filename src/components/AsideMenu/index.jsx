@@ -10,8 +10,12 @@ import "./styles/AsideMenu-mobile.css";
 
 function AsideMenu({ theme, dispatch }) {
   const { home, projects, saved } = config.routes;
-  const { home_link_text, projects_link_text, saved_link_text } =
-    config.components.aside;
+  const {
+    home_link_text,
+    projects_link_text,
+    saved_link_text,
+    theme_button_text,
+  } = config.components.aside;
   const { rate_keys_list } = config.localStorage;
 
   const [openMenu, setOpenMenu] = useState(false);
@@ -76,7 +80,7 @@ function AsideMenu({ theme, dispatch }) {
             className={`aside-menu__content__nav__theme bg-${theme}-00 c-${theme}-05`}
             onClick={handleChangeTheme}
           >
-            Mode:{" "}
+            {theme_button_text}
             <span className="aside-menu__content__nav__theme__icon">
               {themeIcon}
             </span>

@@ -5,6 +5,7 @@ import config from "../../config.json";
 import Footer from "../../components/Footer";
 import CardProject from "../../components/CardProject";
 import ToolLine from "../../components/ToolLine";
+import Loading from "../../components/Loading";
 import {
   filterByTools,
   filterByWords,
@@ -14,7 +15,6 @@ import { connect } from "react-redux";
 import { fetchProjects } from "../../utils/fetchProjects";
 import "./styles/Projects.css";
 import "./styles/Projects-mobile.css";
-import Loading from "../../components/Loading";
 
 function Projects({ theme }) {
   const { slogan, placeholder_search_text, section_projects_title } =

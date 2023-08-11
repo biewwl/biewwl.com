@@ -1,8 +1,10 @@
+import axios from "axios";
+
 export const fetchCommits = async (repo) => {
-  const response = await fetch(
+  const response = await axios.get(
     `https://api.github.com/repos/biewwl/${repo}/commits?owner=biewwl&repo=${repo}`
   );
-  const commits = await response.json();
+  const commits = await response.data;
   if (response.status !== 200) return [];
   const mappedCommits = commits.map((commit) => {
     const {

@@ -63,7 +63,7 @@ function LatestProject({ theme }) {
                   src={image}
                   alt=""
                   key={i}
-                  className={`latest-project__images__image-${i}`}
+                  className={`latest-project__images__image-${i} bb-${theme}-03`}
                 />
               ))}
             </section>

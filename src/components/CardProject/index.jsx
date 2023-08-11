@@ -4,6 +4,7 @@ import config from "../../config.json";
 import tools from "../../data/tools";
 import { connect } from "react-redux";
 import "./styles/CardProject.css";
+import DevTags from "../DevTags";
 
 function CardProject({ projectData, theme }) {
   const {
@@ -14,10 +15,11 @@ function CardProject({ projectData, theme }) {
     figma,
     frontend,
     backend,
-    design
+    design,
   } = projectData;
 
   const { project } = config.routes;
+  const { project_link_text } = config.components.cardProject;
   const [pathToProject] = project.split(":");
 
   const [projectCover] = images;
@@ -27,33 +29,16 @@ function CardProject({ projectData, theme }) {
       <img src={projectCover} alt="" className="card-project__image" />
       <div className="card-project__details">
         <h4 className={`card-project__details__title c-${theme}-02`}>{name}</h4>
-        <p className={`card-project__details__description c-${theme}-05`}>{description}</p>
-        <div className="card-project__details__tags-dev">
-          {frontend && (
-            <span className="card-project__details__tags-dev--tag frontend">
-              <Icon icon="gridicons:site" />
-              <span>FrontEnd</span>
-            </span>
-          )}
-          {backend && (
-            <span className="card-project__details__tags-dev--tag backend">
-              <Icon icon="ph:database" />
-              <span>BackEnd</span>
-            </span>
-          )}
-          {design && (
-            <span className="card-project__details__tags-dev--tag design">
-              <Icon icon="teenyicons:figma-outline" />
-              <span>UI UX</span>
-            </span>
-          )}
-        </div>
+        <p className={`card-project__details__description c-${theme}-05`}>
+          {description}
+        </p>
+        <DevTags frontend={frontend} backend={backend} design={design} />
         <div className="card-project__details__links">
           <Link
             to={`${pathToProject}${name}`}
             className={`card-project__details__links__link-to-project bg-${theme}-02`}
           >
-            More Details
+            {project_link_text}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="17"

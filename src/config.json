@@ -16,24 +16,65 @@
       "section_tools_title": "Tools, Languages ​​and Frameworks that I master."
     },
     "projects": {
-      "slogan":"Discover new templates and designs",
+      "slogan": "Discover new templates and designs",
       "placeholder_search_text": "Name, Framework, Library...",
-      "section_projects_title": "All projects developed",
-      "identifier_tool": "+"
+      "section_projects_title": "All projects developed"
     },
     "project": {
       "figma_link_text": "Design",
-      "repository_link_text": "Repository"
+      "repository_link_text": "Repository",
+      "text_above_project_title": "Project",
+      "section_tools_text": "Tools",
+      "section_tools_icon": "carbon:tool-box"
+    },
+    "saved": {
+      "saved_link_to_projects_text": "Browse projects you've rated 1 or more stars",
+      "section_rated_title": "Rated Projects"
+    },
+    "404": {
+      "not_found_message": "This page doesn't exists"
     }
   },
   "components": {
     "aside": {
       "home_link_text": "Home",
       "projects_link_text": "Projects",
-      "saved_link_text": "Rated Projects"
+      "saved_link_text": "Rated Projects",
+      "theme_button_text": "Mode:"
     },
     "loading": {
       "loading_message": "This delay could be a network issue."
+    },
+    "cardProject": {
+      "project_link_text": "More Details"
+    },
+    "commit": {
+      "icon_commit": {
+        "styles": "fluent-mdl2:format-painter",
+        "feat": "octicon:package-24",
+        "fix": "tabler:tool",
+        "refactor": "ph:star-four-light"
+      }
+    },
+    "commits": {
+      "section_last_commits_text": "Last Commits",
+      "section_last_commits_icon": "codicon:git-commit"
+    },
+    "footer": {
+      "section_links_title": "Links",
+      "section_contact_title": "Contact",
+      "links": [
+        { "name": "Instagram", "link": "https://instagram.com/biewwl.js" },
+        { "name": "Github", "link": "https://github.com/biewwl" },
+        { "name": "Figma", "link": "https://www.figma.com/@biewwl" },
+        { "name": "Linkedin", "link": "https://www.linkedin.com/in/biewwl/" }
+      ],
+      "contacts": ["biewwl.js@gmail.com", "+55 (98) 92000 7200"]
+    },
+    "devTags": {
+      "frontend_tag_text": "Frontend",
+      "backend_tag_text": "Backend",
+      "design_tag_text": "UI UX"
     }
   },
   "localStorage": {

@@ -10,8 +10,8 @@ export const fetchProject = async (projectName) => {
   const projectInfo = await axios.get(
     `https://raw.githubusercontent.com/biewwl/${projectName}/master/project-info.json`
   );
-  const projectInfoJSON = await projectInfo.data;
-  const { images, frontend, backend, design } = projectInfoJSON;
+  const projectInfoData = await projectInfo.data;
+  const { images, frontend, backend, design } = projectInfoData;
   const toolsMapped = topics.map((toolName) => tools[toolName]);
   return {
     name,
@@ -47,8 +47,8 @@ const filterProjects = async (projects) => {
 
 export const fetchProjects = async () => {
   const response = await axios.get("https://api.github.com/users/biewwl/repos");
-  const responseJSON = await response.data;
-  const filteredProjects = await filterProjects(responseJSON);
+  const responseData = await response.data;
+  const filteredProjects = await filterProjects(responseData);
   const mappedProjects = await Promise.all(
     filteredProjects.map(async (project) => {
       const { name } = project;

@@ -14,6 +14,8 @@ import "./styles/Saved-mobile.css";
 function Saved({ theme }) {
   const { rate_keys_list, rate_key } = config.localStorage;
   const { projects: projectsRoute } = config.routes;
+  const { saved_link_to_projects_text, section_rated_title } =
+    config.pages.saved;
   const [orderAsc, setOrderAsc] = useState(false);
   const [projects, setProjects] = useState([]);
 
@@ -56,14 +58,14 @@ function Saved({ theme }) {
             className={`saved__content__slogan__icon c-${theme}-05`}
           />
           <p className={`saved__content__slogan__text c-${theme}-05`}>
-            Browse projects you've rated 1 or more stars
+            {saved_link_to_projects_text}
           </p>
         </Link>
         <div className="saved__content__title-and-sort">
           <h1
             className={`saved__content__title-and-sort__title c-gradient-${theme}`}
           >
-            Rated Projects
+            {section_rated_title}
           </h1>
           <button
             onClick={handleSort}

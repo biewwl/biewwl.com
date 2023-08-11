@@ -4,11 +4,14 @@ import { useParams } from "react-router-dom";
 import Commit from "../Commit";
 import { connect } from "react-redux";
 import SectionTitle from "../SectionTitle/SectionTitle";
+import config from "../../config.json";
 import "./styles/Commits.css";
 
 function Commits({ theme }) {
   const [lastCommits, setLastCommits] = useState([]);
   const { projectName } = useParams();
+  const { section_last_commits_text, section_last_commits_icon } =
+    config.components.commits;
 
   useEffect(() => {
     const setCommits = async () => {
@@ -20,7 +23,10 @@ function Commits({ theme }) {
 
   return (
     <section className="commits">
-      <SectionTitle icon={"codicon:git-commit"} text={"Last Commits"} />
+      <SectionTitle
+        icon={section_last_commits_icon}
+        text={section_last_commits_text}
+      />
       <section className="commits__cards">
         {lastCommits.map((commitData, i) => {
           return <Commit key={i} commitData={commitData} index={i} />;
