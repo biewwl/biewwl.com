@@ -46,8 +46,8 @@ function Home({ theme }) {
         <h1 className={`home__presentation__slogan c-gradient-${theme}`}>
           {slogan}
         </h1>
-        <Link to={projects} className="home__presentation__discovery-btn">
-          <span className="home__presentation__discovery-btn__text">
+        <Link to={projects} className={`home__presentation__discovery-btn bb-${theme}-05`}>
+          <span className={`home__presentation__discovery-btn__text c-${theme}-03`}>
             {projects_link_text}
           </span>
         </Link>

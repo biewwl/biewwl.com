@@ -71,7 +71,7 @@
 }
 
 .c-gradient-dark {
-  background: linear-gradient(180deg, var(--medium-01) 0%, var(--dark-02) 100%);
+  background: linear-gradient(180deg, var(--medium-01) 0%, var(--dark-05) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -81,12 +81,16 @@
   background: linear-gradient(90deg, var(--dark-03) 0%, var(--dark-00) 100%);
 }
 
+.bb-dark-02 {
+  border: 1px solid var(--dark-02);
+}
+
 .bb-dark-03 {
   border: 1px solid var(--dark-03);
 }
 
-.bb-dark-02 {
-  border: 1px solid var(--dark-03);
+.bb-dark-05 {
+  border: 1px solid var(--dark-05);
 }
 
 /* Light */
@@ -132,7 +136,7 @@
 }
 
 .c-gradient-light {
-  background: linear-gradient(180deg, var(--dark-04) 0%, var(--medium-01) 100%);
+  background: linear-gradient(180deg, var(--dark-04) 0%, var(--medium-00) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -142,10 +146,14 @@
   background: linear-gradient(90deg, var(--light-01) 0%, var(--light-00) 100%);
 }
 
-.bb-light-03 {
+.bb-light-02 {
   border: 1px solid var(--light-02);
 }
 
-.bb-light-02 {
-  border: 1px solid var(--light-02);
+.bb-light-03 {
+  border: 1px solid var(--light-03);
+}
+
+.bb-light-05 {
+  border: 1px solid var(--light-05);
 }
