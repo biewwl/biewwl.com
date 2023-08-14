@@ -72,16 +72,16 @@ function AsideMenu({ theme, dispatch }) {
             {projects_link_text}
           </Link>
           <Link
-            to={saved}
-            className={`aside-menu__content__nav__link c-${theme}-05`}
-          >
-            {saved_link_text} ({ratedCardsCount})
-          </Link>
-          <Link
             to={resume}
             className={`aside-menu__content__nav__link c-${theme}-05`}
           >
             {resume_link_text}
+          </Link>
+          <Link
+            to={saved}
+            className={`aside-menu__content__nav__link c-${theme}-05`}
+          >
+            {saved_link_text} ({ratedCardsCount})
           </Link>
           <button
             className={`aside-menu__content__nav__theme bg-${theme}-00 c-${theme}-05`}
