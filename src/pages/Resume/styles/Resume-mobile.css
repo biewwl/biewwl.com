@@ -1,0 +1,17 @@
+@media screen and (max-width: 600px) {
+
+  .resume__main {
+    flex-direction: column;
+  }
+
+
+  .resume__main__left-content__title {
+    font-size: 0.8em;
+  } 
+
+  .resume__main__left-content__text {
+    font-weight: 300;
+    font-size: 1.5em;
+  }
+
+}

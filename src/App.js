@@ -8,9 +8,10 @@ import Saved from "./pages/Saved";
 import NotFound from "./pages/NotFound";
 import "./App.css";
 import "./css/theme.css";
+import Resume from "./pages/Resume";
 
 function App() {
-  const { home, projects, project, saved } = config.routes;
+  const { home, projects, project, saved, resume } = config.routes;
   const location = useLocation();
 
   const scrollToTop = useCallback(() => {
@@ -28,6 +29,7 @@ function App() {
         <Route exact path={projects} element={<Projects />} />
         <Route exact path={project} element={<Project />} />
         <Route exact path={saved} element={<Saved />} />
+        <Route exact path={resume} element={<Resume />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

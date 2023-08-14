@@ -9,11 +9,12 @@ import "./styles/AsideMenu.css";
 import "./styles/AsideMenu-mobile.css";
 
 function AsideMenu({ theme, dispatch }) {
-  const { home, projects, saved } = config.routes;
+  const { home, projects, saved, resume } = config.routes;
   const {
     home_link_text,
     projects_link_text,
     saved_link_text,
+    resume_link_text,
     theme_button_text,
   } = config.components.aside;
   const { rate_keys_list } = config.localStorage;
@@ -75,6 +76,12 @@ function AsideMenu({ theme, dispatch }) {
             className={`aside-menu__content__nav__link c-${theme}-05`}
           >
             {saved_link_text} ({ratedCardsCount})
+          </Link>
+          <Link
+            to={resume}
+            className={`aside-menu__content__nav__link c-${theme}-05`}
+          >
+            {resume_link_text}
           </Link>
           <button
             className={`aside-menu__content__nav__theme bg-${theme}-00 c-${theme}-05`}

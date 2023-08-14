@@ -14,11 +14,12 @@ function Footer({ theme }) {
         <h3 className={`footer__links__title c-${theme}-00`}>
           {section_links_title}
         </h3>
-        {links.map(({ name, link }) => (
+        {links.map(({ name, link }, i) => (
           <Link
             to={link}
             target="_blank"
             className={`footer__links__link c-${theme}-05`}
+            key={i}
           >
             {name}
           </Link>
@@ -28,8 +29,8 @@ function Footer({ theme }) {
         <h3 className={`footer__contact__title c-${theme}-00`}>
           {section_contact_title}
         </h3>
-        {contacts.map((contact) => (
-          <span className={`footer__contact__item c-${theme}-05`}>
+        {contacts.map((contact, i) => (
+          <span className={`footer__contact__item c-${theme}-05`} key={i}>
             {contact}
           </span>
         ))}

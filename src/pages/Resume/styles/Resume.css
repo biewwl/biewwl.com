@@ -1,0 +1,76 @@
+.resume {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.resume__main {
+  /* background-color: blue; */
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+  justify-content: space-evenly;
+}
+
+.resume__main__left-content {
+  max-width: 500px;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.resume__main__left-content__title {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-size: 1em;
+}
+
+.resume__main__left-content__text {
+  font-weight: 300;
+  font-size: 2em;
+}
+
+.resume__main__left-content__button {
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 0.5em;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.resume__main__left-content__button__icon {
+  font-size: 1.3em;
+}
+
+.resume__main__left-content__button__text {
+  margin-block-start: 3px;
+}
+
+.resume__main__view {
+  display: flex;
+  justify-content: center;
+}
+
+.react-pdf__Page {
+  display: flex;
+  background: unset !important;
+  width: auto !important;
+  max-width: 500px;
+  justify-content: center;
+}
+
+
+.resume__main__view canvas {
+  width: auto !important;
+  height: auto !important;
+  max-height: 60vh;
+  object-fit: cover;
+  border: 1px solid var(--light-02);
+}

@@ -3,7 +3,8 @@
     "home": "/",
     "projects": "/projects",
     "project": "/project/:projectName",
-    "saved": "/project/saved"
+    "saved": "/project/saved",
+    "resume": "/resume"
   },
   "pages": {
     "home": {
@@ -40,6 +41,7 @@
       "home_link_text": "Home",
       "projects_link_text": "Projects",
       "saved_link_text": "Rated Projects",
+      "resume_link_text": "Resume",
       "theme_button_text": "Mode:"
     },
     "loading": {
