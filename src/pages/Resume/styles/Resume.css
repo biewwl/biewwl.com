@@ -6,7 +6,6 @@
 }
 
 .resume__main {
-  /* background-color: blue; */
   display: flex;
   padding: 20px;
   gap: 20px;
@@ -15,7 +14,6 @@
 
 .resume__main__left-content {
   max-width: 500px;
-  /* background-color: red; */
   display: flex;
   flex-direction: column;
   padding: 20px;
